@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('video-modal');
     const iframe = document.getElementById('video-modal-iframe');
     const closeElements = modal ? modal.querySelectorAll('[data-video-close]') : [];
-	const YT_EMBED_BASE = 'https://www.youtube-nocookie.com/embed/';
+    const YT_EMBED_BASE = 'https://www.youtube-nocookie.com/embed/';
 
 
     if (!thumbnail || !modal || !iframe) return;
