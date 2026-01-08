@@ -6,14 +6,14 @@
     <meta name="description" content="Laboratorio académico sobre fraudes en medios de pago NFC: análisis de SuperCard X, Copybara y medidas de protección">
     <meta name="keywords" content="NFC, fraudes, medios de pago, SuperCard X, Copybara, seguridad móvil, relay attack, malware">
     <meta name="author" content="José Carlos Gallego Cano">
-    <title>Fraudes en Medios de Pago NFC - Laboratorio de Seguridad</title>
+    <title>Fraudes en medios de pago NFC - Laboratorio de seguridad</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <h1>Fraudes en Medios de Pago NFC</h1>
+                <h1>Fraudes en medios de pago NFC</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="#conceptos">Conceptos básicos</a></li>
@@ -199,7 +199,10 @@
                 <div class="variation-card">
                     <h3>Arquitectura del ataque</h3>
                     <p>La operación de SuperCard X se basa en una arquitectura distribuida de tres componentes que trabajan de forma coordinada para ejecutar el fraude:</p>
-                    
+                    <figure class="diagram-figure">
+                        <img src="images/esquema_supercardx.png" alt="Arquitectura del ataque SuperCard X, diagrama técnico que muestra tres componentes principales conectados por flechas: Componente móvil dispositivo de la víctima que captura comunicaciones NFC; Componente de retransmisión dispositivo del atacante que emula la tarjeta ante un terminal POS; Infraestructura de backend servidores C and C que coordinan y almacenan datos. Flechas indican flujo de datos: captura NFC hacia servidor C and C, transmisión cifrada y retransmisión al emulador. Fondo de diagrama con cajas y etiquetas que incluyen los textos Componente móvil, Componente de retransmisión e Infraestructura de backend. Tono informativo y neutro" class="diagram-image">
+                        <figcaption class="image-caption">Esquema del funcionamiento de Supercard X. Fuente: Cleafy</figcaption>
+                    </figure>
                     <p><strong>1. Componente móvil (dispositivo de la víctima):</strong></p>
                     <ul>
                         <li><strong>Malware Android:</strong> Aplicación troyanizada que se ejecuta en segundo plano</li>
@@ -1305,7 +1308,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 - Laboratorio de Fraudes en Medios de Pago NFC</p>
+            <p>© 2025 - Laboratorio de fraudes en medios de pago NFC</p>
             <p>Este contenido es exclusivamente educativo y no debe utilizarse con fines maliciosos.</p>
         </div>
     </footer>
