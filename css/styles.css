@@ -923,3 +923,44 @@ body.video-modal-open {
     word-break: break-word;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Imágenes dentro de tarjetas
+   -------------------------------------------------------------------------- */
+
+.diagram-figure {
+    margin: 1rem 0 1.25rem;
+    width: 100%;
+}
+
+.diagram-image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    /* “Encaje” dentro de la tarjeta */
+    border-radius: 12px;
+    background: #f8f9fa;              /* por si el PNG tiene transparencia */
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+
+    /* Si algún diagrama fuera enorme, evita que “reviente” visualmente */
+    max-height: 520px;
+    object-fit: contain;
+}
+
+.image-caption {
+    margin-top: 0.6rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+/* Ajuste en móvil: un pelín menos de altura para que no ocupe media página */
+@media (max-width: 768px) {
+    .diagram-image {
+        max-height: 380px;
+    }
+}
