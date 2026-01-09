@@ -192,6 +192,13 @@
                         <li><strong>Dificultad:</strong> alta, requiere proximidad física y hardware específico.</li>
                         <li><strong>Mitigación:</strong> cifrado de la comunicación y uso de datos dinámicos por transacción.</li>
                     </ul>
+                    <p>
+                        En entornos de investigación, la interceptación pasiva de comunicaciones NFC puede realizarse
+                        mediante dispositivos de radio definido por software (SDR) como <a href="https://lab401.com/es-es/products/hackrf-one" target="_blank"><strong>HackRF One</strong></a> o <a href="https://greatscottgadgets.com/bladeRF/" target="_blank"><strong>bladeRF</strong></a>,
+                        que permiten capturar la señal de radiofrecuencia en bruto para su posterior análisis.
+                    </p>
+                    <p>En el siguiente vídeo se muestra un ejemplo práctico de eavesdropping NFC utilizando HackRF:</p>
+
                     <div class="poc-video">
                         <button class="video-thumbnail" 
                                 type="button" 
@@ -202,7 +209,7 @@
                             <span class="play-icon" aria-hidden="true">▶</span>
                         </button>
                     </div>
-                    <h4>Relay attacks (ataques de retransmisión)</h4>
+                    <h4>Relay attack (ataque de retransmisión)</h4>
                     <p>
                         En este tipo de ataque, el adversario actúa como intermediario retransmitiendo en tiempo real
                         la comunicación entre un lector legítimo y una tarjeta o dispositivo que se encuentra a mayor distancia.
@@ -214,11 +221,22 @@
                         <li><strong>Ejemplos:</strong> ataques prácticos como <a href="#supercardx">SuperCard X</a> o <a href="#copybara">Copybara</a>.</li>
                         <li><strong>Contramedidas:</strong> límites estrictos de tiempo y detección de latencias anómalas.</li>
                     </ul>
+                    <p>El siguiente vídeo corresponde a la ponencia "The Art Of Relay And Replay Attacks", de <a href="https://salmg.net/" target="_blank">Salvador Mendoza</a>.</p>
+
+                    <div class="poc-video">
+                        <button class="video-thumbnail" 
+                                type="button" 
+                                data-video-id="iiV7iSwX2bI"
+                                aria-label="Pagos NFC El arte de la retransmisión y la repetición Ataques Salvador Mendoza">
+                            <img src="https://img.youtube.com/vi/iiV7iSwX2bI/hqdefault.jpg" 
+                                alt="Pagos NFC El arte de la retransmisión y la repetición Ataques Salvador Mendoza">
+                            <span class="play-icon" aria-hidden="true">▶</span>
+                        </button>
+                    </div>
 
                     <h4>Man-in-the-Middle (MITM) en NFC</h4>
                     <p>
-                        A diferencia del eavesdropping, el ataque MITM implica una intervención activa en la comunicación,
-                        permitiendo al atacante interceptar y modificar los mensajes intercambiados entre los dispositivos NFC.
+                        El ataque MITM implica una intervención <strong>activa</strong> en la comunicación, permitiendo al atacante interceptar <strong> y modificar</strong> los mensajes intercambiados entre los dispositivos NFC. Esto contrasta con el ataque eavesdropping, que es pasivo, y el relay attack, que no modifica los mensajes.
                     </p>
                     <ul>
                         <li><strong>Técnicas:</strong> alteración de comandos APDU o manipulación de criptogramas.</li>
@@ -238,6 +256,18 @@
                         <li><strong>Datos potencialmente expuestos:</strong> información parcial como fecha de expiración.</li>
                         <li><strong>Medidas preventivas:</strong> fundas o carteras con bloqueo RFID.</li>
                     </ul>
+                    <p>Existen muchas herramientas para clonar tarjetas NFC. Algunas de las más populares son <a href="https://lab401.com/es-es/products/flipper-zero" target="_blank">Flipper Zero</a> o <a href="https://lab401.com/es-es/products/proxmark-3-rdv4" target="_blank">Proxmark 3</a>. En el siguiente vídeo se muestra cómo se utiliza para clonar una tarjeta NFC.</p>
+
+                    <div class="poc-video">
+                        <button class="video-thumbnail" 
+                                type="button" 
+                                data-video-id="kYjgx8OLFK0"
+                                aria-label="Cómo clonar tarjetas con el Flipper Zero">
+                            <img src="https://img.youtube.com/vi/kYjgx8OLFK0/hqdefault.jpg" 
+                                alt="Cómo clonar tarjetas con el Flipper Zero">
+                            <span class="play-icon" aria-hidden="true">▶</span>
+                        </button>
+                    </div>
 
                     <h4>Vulnerabilidades en implementaciones</h4>
                     <p>
