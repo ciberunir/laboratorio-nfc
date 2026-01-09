@@ -51,40 +51,54 @@
                     <p><strong>NFC (Near Field Communication)</strong> es una tecnología de comunicación inalámbrica de corto alcance que permite el intercambio de datos entre dispositivos a distancias de hasta 10 centímetros. Opera en la frecuencia de 13.56 MHz y se basa en el acoplamiento inductivo entre antenas.</p>
                     
                     <p><strong>Arquitectura de comunicación NFC:</strong></p>
+                    <figure class="diagram-figure">
+                        <img src="img/arquitectura_nfc.png" alt="Arquitectura de comunicación NFC" class="diagram-image">
+                        <figcaption class="image-caption">Arquitectura de comunicación NFC.</figcaption>
+                    </figure>
                     <ul>
-                        <li><strong>Iniciador (Initiator):</strong> Dispositivo que genera el campo RF y controla la comunicación</li>
-                        <li><strong>Objetivo (Target):</strong> Dispositivo que responde a la solicitud del iniciador y puede ser pasivo (powered by field) o activo</li>
+                        <li><strong>Iniciador-lector:</strong> dispositivo que genera el campo RF y controla la comunicación</li>
+                        <li><strong>Transpondedor:</strong> dispositivo que responde a la solicitud del iniciador activando el chip donde se almacena la información. Puede ser pasivo (powered by field) o activo.</li>
                     </ul>
 
+
                     <p><strong>Modos de operación:</strong></p>
+                    <figure class="diagram-figure">
+                        <img src="img/modos_nfc.png" alt="The Survey on Near Field Communication - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/NFC-interaction-styles-and-operating-modes_fig3_278030190" class="diagram-image">
+                        <figcaption class="image-caption">Modos de operación de NFC. Fuente: <a href="https://www.researchgate.net/figure/NFC-interaction-styles-and-operating-modes_fig3_278030190" target="_blank">ResearchGate</a>".</figcaption>
+                    </figure>
                     <ul>
-                        <li><strong>Lectura/Escritura (Reader/Writer):</strong> Permite leer y escribir en etiquetas NFC pasivas</li>
-                        <li><strong>Peer-to-Peer (P2P):</strong> Comunicación bidireccional entre dos dispositivos NFC activos</li>
-                        <li><strong>Emulación de tarjeta (Card Emulation):</strong> El dispositivo NFC emula una tarjeta inteligente contactless</li>
+                        <li><strong>Lectura/Escritura (Reader/Writer):</strong> permite leer y escribir en etiquetas NFC pasivas.</li>
+                        <li><strong>Peer-to-Peer (P2P):</strong> comunicación bidireccional entre dos dispositivos NFC activos.</li>
+                        <li><strong>Emulación de tarjeta (Card Emulation):</strong> el dispositivo NFC emula una tarjeta inteligente contactless.</li>
                     </ul>
 
                     <p><strong>Protocolos de comunicación:</strong></p>
                     <ul>
-                        <li><strong>ISO/IEC 14443:</strong> Estándar para tarjetas de proximidad (Type A y Type B)</li>
-                        <li><strong>ISO/IEC 18092 (NFCIP-1):</strong> Protocolo de interfaz NFC</li>
-                        <li><strong>ISO/IEC 15693:</strong> Estándar para tarjetas de vecindad</li>
+                        <li><strong>ISO/IEC 14443:</strong> estándar para tarjetas de proximidad (Type A y Type B).</li>
+                        <li><strong>ISO/IEC 18092 (NFCIP-1):</strong> protocolo de interfaz NFC.</li>
+                        <li><strong>ISO/IEC 15693:</strong> estándar para tarjetas de vecindad (tarjetas que pueden ser leídas desde una mayor distancia que las de proximidad).</li>
                     </ul>
 
                     <p><strong>Tipos de etiquetas NFC:</strong></p>
+                    <figure class="diagram-figure">
+                        <img src="img/tipos_etiquetas_nfc.png" alt="Tipos de etiquetas NFC" class="diagram-image">
+                        <figcaption class="image-caption">Tipos de etiquetas NFC. Fuente: <a href="http://es.as-rfid.com/info/what-does-nfc-tag-type-not-supported-mean-81733582.html" target="_blank">Ascend IoT</a>".</figcaption>
+                    </figure>
                     <ul>
-                        <li><strong>Type 1:</strong> Basado en ISO 14443A, 96 bytes de memoria, lectura/escritura</li>
-                        <li><strong>Type 2:</strong> Basado en ISO 14443A, 48-2K bytes, lectura/escritura</li>
-                        <li><strong>Type 3:</strong> Basado en FeliCa (JIS X 6319-4), mayor velocidad</li>
-                        <li><strong>Type 4:</strong> Compatible con ISO 14443A/B, lectura/escritura, mayor capacidad</li>
-                        <li><strong>Type 5:</strong> Basado en ISO 15693, mayor alcance de lectura</li>
+                        <li><strong>Type 1:</strong> basado en ISO 14443A, 96 bytes de memoria, lectura/escritura.</li>
+                        <li><strong>Type 2:</strong> basado en ISO 14443A, 48-2K bytes, lectura/escritura.</li>
+                        <li><strong>Type 3:</strong> basado en FeliCa (JIS X 6319-4), mayor velocidad.</li>
+                        <li><strong>Type 4:</strong> compatible con ISO 14443A/B, lectura/escritura, mayor capacidad.</li>
+                        <li><strong>Type 5:</strong> basado en ISO 15693, mayor alcance de lectura.</li>
                     </ul>
+
 
                     <p><strong>Seguridad inherente de NFC:</strong></p>
                     <ul>
-                        <li><strong>Proximidad física:</strong> Requiere cercanía extrema (hasta 10 cm), dificultando ataques remotos</li>
-                        <li><strong>Cifrado:</strong> Soporte para algoritmos criptográficos (AES, 3DES)</li>
-                        <li><strong>Tokenización:</strong> Sustitución de datos sensibles por tokens únicos</li>
-                        <li><strong>Autenticación mutua:</strong> Verificación bidireccional entre dispositivos</li>
+                        <li><strong>Proximidad física:</strong> requiere cercanía extrema (hasta 10 cm), dificultando ataques remotos.</li>
+                        <li><strong>Cifrado:</strong> soporte para algoritmos criptográficos (AES, 3DES).</li>
+                        <li><strong>Tokenización:</strong> sustitución de datos sensibles por tokens únicos.</li>
+                        <li><strong>Autenticación mutua:</strong> verificación bidireccional entre dispositivos.</li>
                     </ul>
                 </div>
 
@@ -186,6 +200,10 @@
                 <div class="variation-card">
                     <h3>Descripción técnica</h3>
                     <p><strong>SuperCard X</strong> es una plataforma de Malware-as-a-Service (MaaS) especializada en fraudes mediante ataques de retransmisión NFC (relay attacks). Descubierto y documentado por investigadores de seguridad de Cleafy en 2024, representa una amenaza significativa para usuarios de servicios de pago contactless.</p>
+                    <figure class="diagram-figure">
+                        <img src="img/supercardx_cleafy.png" alt="Formato original de la pantalla del malware SuperCardX" class="diagram-image">
+                        <figcaption class="image-caption">Formato original de la pantalla del malware SuperCardX. Fuente: Cleafy</figcaption>
+                    </figure>
                     <p>Este malware opera como un servicio comercial en mercados clandestinos, permitiendo a atacantes sin conocimientos técnicos avanzados realizar fraudes sofisticados mediante una interfaz simplificada y soporte técnico incluido.</p>
                     <p><strong>Características principales:</strong></p>
                     <ul>
@@ -221,7 +239,7 @@
 
                     <p><strong>3. Infraestructura de backend (servidores C&amp;C):</strong></p>
                     <ul>
-                        <li><strong>Servidor de comando y control:</strong> Coordina la comunicación entre componentes</li>
+                        <li><strong>Servidor de <i>command&control</i>:</strong> Coordina la comunicación entre componentes</li>
                         <li><strong>Base de datos de víctimas:</strong> Almacena información de dispositivos comprometidos</li>
                         <li><strong>Panel de administración:</strong> Interfaz web para operadores del malware</li>
                         <li><strong>Anonimización:</strong> Uso de redes Tor y VPN para ocultar ubicación de servidores</li>
