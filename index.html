@@ -50,10 +50,10 @@
                     <h3>Tecnología NFC (Near Field Communication)</h3>
                     <p><strong>NFC (Near Field Communication)</strong> es una tecnología de comunicación inalámbrica de corto alcance que permite el intercambio de datos entre dispositivos a distancias de hasta 10 centímetros. Opera en la frecuencia de 13.56 MHz y se basa en el acoplamiento inductivo entre antenas.</p>
                     
-                    <p><strong>Arquitectura de comunicación NFC:</strong></p>
+                    <h4>Arquitectura de comunicación NFC:</h4>
                     <figure class="diagram-figure">
                         <img src="img/arquitectura_nfc.png" alt="Arquitectura de comunicación NFC" class="diagram-image">
-                        <figcaption class="image-caption">Arquitectura de comunicación NFC.</figcaption>
+                        <figcaption class="image-caption">Arquitectura de comunicación NFC. Fuente: <a href="https://es.mobiletransaction.org/nfc-significado/" target="_blank">Mobile transaction.</a></figcaption>
                     </figure>
                     <ul>
                         <li><strong>Iniciador-lector (<i>initiator</i>):</strong> dispositivo que genera el campo RF y controla la comunicación</li>
@@ -64,7 +64,7 @@
                     <h4>Modos de operación</h4>
                     <figure class="diagram-figure">
                         <img src="img/modos_nfc.png" alt="The Survey on Near Field Communication - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/NFC-interaction-styles-and-operating-modes_fig3_278030190" class="diagram-image">
-                        <figcaption class="image-caption">Modos de operación de NFC. Fuente: <a href="https://www.researchgate.net/figure/NFC-interaction-styles-and-operating-modes_fig3_278030190" target="_blank">ResearchGate</a>".</figcaption>
+                        <figcaption class="image-caption">Modos de operación de NFC. Fuente: <a href="https://www.researchgate.net/figure/NFC-interaction-styles-and-operating-modes_fig3_278030190" target="_blank">ResearchGate.</a></figcaption>
                     </figure>
                     <ul>
                         <li><strong>Lectura/Escritura (Reader/Writer):</strong> permite leer y escribir en etiquetas NFC pasivas.</li>
@@ -72,17 +72,17 @@
                         <li><strong>Emulación de tarjeta (Card Emulation):</strong> el dispositivo NFC emula una tarjeta inteligente contactless.</li>
                     </ul>
 
-                    <p><strong>Protocolos de comunicación:</strong></p>
+                    <h4>Protocolos de comunicación:</h4>
                     <ul>
                         <li><strong>ISO/IEC 14443:</strong> estándar para tarjetas de proximidad (Type A y Type B).</li>
                         <li><strong>ISO/IEC 18092 (NFCIP-1):</strong> protocolo de interfaz NFC.</li>
                         <li><strong>ISO/IEC 15693:</strong> estándar para tarjetas de vecindad (tarjetas que pueden ser leídas desde una mayor distancia que las de proximidad).</li>
                     </ul>
 
-                    <p><strong>Tipos de etiquetas NFC:</strong></p>
+                    <h4>Tipos de etiquetas NFC:</h4>
                     <figure class="diagram-figure">
                         <img src="img/tipos_etiquetas_nfc.png" alt="Tipos de etiquetas NFC" class="diagram-image">
-                        <figcaption class="image-caption">Tipos de etiquetas NFC. Fuente: <a href="http://es.as-rfid.com/info/what-does-nfc-tag-type-not-supported-mean-81733582.html" target="_blank">Ascend IoT</a>".</figcaption>
+                        <figcaption class="image-caption">Tipos de etiquetas NFC. Fuente: <a href="http://es.as-rfid.com/info/what-does-nfc-tag-type-not-supported-mean-81733582.html" target="_blank">Ascend IoT.</a></figcaption>
                     </figure>
                     <ul>
                         <li><strong>Type 1:</strong> basado en ISO 14443A, 96 bytes de memoria, lectura/escritura.</li>
@@ -93,7 +93,7 @@
                     </ul>
 
 
-                    <p><strong>Seguridad inherente de NFC:</strong></p>
+                    <h4>Seguridad inherente de NFC:</h4>
                     <ul>
                         <li><strong>Proximidad física:</strong> requiere cercanía extrema (hasta 10 cm), dificultando ataques remotos.</li>
                         <li><strong>Cifrado:</strong> soporte para algoritmos criptográficos (AES, 3DES).</li>
@@ -104,85 +104,154 @@
 
                 <div class="concept-card">
                     <h3>Medios de pago NFC</h3>
-                    <p>Los pagos NFC utilizan la tecnología contactless para realizar transacciones financieras de forma rápida y segura mediante la emulación de tarjetas de pago.</p>
 
-                    <p><strong>Funcionamiento de pagos contactless (EMV Contactless):</strong></p>
-                    <ul>
-                        <li><strong>Autenticación criptográfica:</strong> Uso de claves asimétricas y certificados digitales</li>
-                        <li><strong>Datos dinámicos:</strong> Cada transacción genera un criptograma único (Application Cryptogram)</li>
-                        <li><strong>Verificación offline/online:</strong> Validación local o con conexión al emisor</li>
-                        <li><strong>Límites de transacción:</strong> Restricciones de monto para transacciones sin PIN</li>
-                    </ul>
+                    <p>
+                        Los sistemas de pago basados en NFC permiten realizar transacciones contactless de forma rápida y segura,
+                        utilizando la emulación de tarjetas bancarias en dispositivos móviles o tarjetas físicas compatibles.
+                        Esta tecnología se apoya en los estándares <strong>EMV Contactless</strong>, ampliamente adoptados por la industria financiera.
+                    </p>
+                    <p>
+                        En los sistemas tradicionales, el número de tarjeta (<i>Primary Account Number</i>, PAN) identifica de forma
+                        directa la cuenta del usuario. Exponer este identificador durante una transacción supondría un riesgo elevado,
+                        por lo que los sistemas modernos de pago NFC evitan su uso directo mediante técnicas de <strong>tokenización</strong>.
+                    </p>
 
-                    <p><strong>Tokenización de credenciales:</strong></p>
+                    <h4>Tokenización de credenciales de pago</h4>
+                    <p>
+                        Para proteger las credenciales reales del usuario, los sistemas modernos de pago NFC emplean
+                        <strong>tokenización</strong>, sustituyendo el número de tarjeta por identificadores específicos para cada dispositivo.
+                    </p>
+                    <figure class="diagram-figure">
+                        <img src="img/tokenization_nfc.png" alt="Proceso de tokenización NFC" class="diagram-image">
+                        <figcaption class="image-caption">Proceso de <i>tokenización</i> NFC. Fuente: <a href="https://en.wikipedia.org/wiki/Tokenization_%28data_security%29" target="_blank">Wikipedia.</a></figcaption>
+                    </figure>
                     <ul>
-                        <li><strong>FPAN (Funding Primary Account Number):</strong> Número de tarjeta real almacenado por el emisor</li>
-                        <li><strong>DPAN (Device Primary Account Number):</strong> Token único generado para el dispositivo móvil</li>
-                        <li><strong>Token Vault:</strong> Sistema centralizado de gestión de tokens</li>
-                        <li><strong>Token Service Provider (TSP):</strong> Entidad que genera y gestiona los tokens</li>
+                        <li>
+                            <strong>FPAN (Funding Primary Account Number):</strong> número real de la tarjeta,
+                            custodiado por el emisor y nunca expuesto durante el proceso de pago.
+                        </li>
+                        <li>
+                            <strong>DPAN (Device Primary Account Number):</strong> identificador alternativo asignado
+                            a un dispositivo o aplicación concreta, utilizado en lugar del FPAN.
+                        </li>
+                        <li>
+                            <strong>MPAN (Merchant Primary Account Number):</strong> variante del token vinculada
+                            a un comercio específico, utilizada en algunos esquemas para limitar aún más el alcance del token.
+                        </li>
+                        <li>
+                            <strong>Token Vault:</strong> infraestructura centralizada que mantiene la relación segura
+                            entre el FPAN y los distintos tokens generados.
+                        </li>
                     </ul>
+                    <p>
+                        Durante una transacción contactless, el terminal no recibe el número real de la tarjeta,
+                        sino uno de estos tokens, junto con datos criptográficos dinámicos que hacen que cada operación
+                        sea única.
+                    </p>
 
-                    <p><strong>Servicios de pago NFC:</strong></p>
+                    <h4>Emulación de tarjetas de pago</h4>
+                    <p>
+                        Una vez tokenizadas las credenciales, surge la cuestión clave de <strong>dónde</strong> se almacenan
+                        y procesan estos datos dentro del dispositivo. Desde el punto de vista técnico, existen dos enfoques
+                        principales para implementar la emulación de tarjetas de pago.
+                    </p>
                     <ul>
-                        <li><strong>Apple Pay:</strong> Utiliza Secure Element integrado en el dispositivo</li>
-                        <li><strong>Google Pay:</strong> Soporta HCE (Host Card Emulation) en Android</li>
-                        <li><strong>Samsung Pay:</strong> Combina NFC y MST (Magnetic Secure Transmission)</li>
+                        <li>
+                            <strong>Secure Element (SE):</strong> chip físico aislado del sistema operativo,
+                            diseñado específicamente para almacenar datos sensibles con alta resistencia a ataques. Apple Pay y Samsung Pay utilizan este enfoque.
+                        </li>
+                        <li>
+                            <strong>Host Card Emulation (HCE):</strong> enfoque basado en software que permite a las aplicaciones
+                            gestionar pagos NFC sin necesidad de hardware dedicado. Google Pay utiliza principalmente HCE.
+                        </li>
                     </ul>
-
-                    <p><strong>Host Card Emulation (HCE) vs. Secure Element (SE):</strong></p>
-                    <ul>
-                        <li><strong>Secure Element (SE):</strong> Chip físico dedicado en el dispositivo que almacena credenciales de forma segura, aislado del sistema operativo</li>
-                        <li><strong>HCE (Host Card Emulation):</strong> Emulación basada en software que permite a aplicaciones en la nube gestionar transacciones NFC sin hardware dedicado</li>
-                        <li><strong>Ventajas HCE:</strong> Mayor flexibilidad, actualizaciones remotas, menor dependencia del hardware</li>
-                        <li><strong>Ventajas SE:</strong> Mayor seguridad física, certificaciones bancarias, resistencia a ataques</li>
-                    </ul>
+                    <p>
+                            HCE ofrece mayor flexibilidad y facilidad de despliegue, mientras que el SE proporciona un nivel superior de seguridad física y certificación bancaria.
+                    </p>
                 </div>
+
 
                 <div class="concept-card">
                     <h3>Vectores de ataque en NFC</h3>
-                    <p>A pesar de sus mecanismos de seguridad, la tecnología NFC es susceptible a diversos vectores de ataque que comprometen la confidencialidad, integridad y disponibilidad de las transacciones.</p>
 
-                    <p><strong>Eavesdropping (Interceptación de comunicaciones):</strong></p>
+                    <p>
+                        Aunque la tecnología NFC incorpora mecanismos de seguridad diseñados para minimizar riesgos,
+                        su naturaleza inalámbrica y de corto alcance la hace vulnerable a determinados vectores de ataque.
+                        Estos ataques pueden afectar a la confidencialidad, integridad o disponibilidad de las comunicaciones
+                        y transacciones.
+                    </p>
+
+                    <h4>Eavesdropping (interceptación de comunicaciones)</h4>
+                    <p>
+                        Consiste en la captura pasiva de las señales de radiofrecuencia intercambiadas durante una comunicación NFC.
+                        Aunque el alcance nominal de NFC es muy reducido, un atacante con equipamiento especializado puede
+                        interceptar la señal a distancias superiores a las previstas.
+                    </p>
                     <ul>
-                        <li><strong>Descripción:</strong> Captura pasiva de señales RF durante la comunicación NFC</li>
-                        <li><strong>Alcance:</strong> Hasta 1 metro para lectores y 10 metros para tarjetas pasivas</li>
-                        <li><strong>Mitigación:</strong> Cifrado extremo a extremo, protocolos anti-colisión</li>
-                        <li><strong>Dificultad:</strong> Requiere equipamiento especializado y proximidad física</li>
+                        <li><strong>Alcance potencial:</strong> hasta 1 metro en lectores activos y varios metros en tarjetas pasivas.</li>
+                        <li><strong>Dificultad:</strong> alta, requiere proximidad física y hardware específico.</li>
+                        <li><strong>Mitigación:</strong> cifrado de la comunicación y uso de datos dinámicos por transacción.</li>
+                    </ul>
+                    <div class="poc-video">
+                        <button class="video-thumbnail" 
+                                type="button" 
+                                data-video-id="CjeOW-rVc3w"
+                                aria-label="Reproducir vídeo sobre NFC">
+                            <img src="https://img.youtube.com/vi/CjeOW-rVc3w/hqdefault.jpg" 
+                                alt="Lets Hack into NFC using HackRF/SDR | Key Technology behind Apple Pay, Samsung Pay, Google Pay">
+                            <span class="play-icon" aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                    <h4>Relay attacks (ataques de retransmisión)</h4>
+                    <p>
+                        En este tipo de ataque, el adversario actúa como intermediario retransmitiendo en tiempo real
+                        la comunicación entre un lector legítimo y una tarjeta o dispositivo que se encuentra a mayor distancia.
+                        De este modo, se elude la restricción de proximidad física que caracteriza a NFC.
+                    </p>
+                    <ul>
+                        <li><strong>Arquitectura típica:</strong> un dispositivo cercano a la víctima y otro próximo al lector.</li>
+                        <li><strong>Impacto:</strong> posibilidad de realizar transacciones sin el conocimiento del usuario.</li>
+                        <li><strong>Ejemplos:</strong> ataques prácticos como <a href="#supercardx">SuperCard X</a> o <a href="#copybara">Copybara</a>.</li>
+                        <li><strong>Contramedidas:</strong> límites estrictos de tiempo y detección de latencias anómalas.</li>
                     </ul>
 
-                    <p><strong>Relay Attacks (Ataques de retransmisión):</strong></p>
+                    <h4>Man-in-the-Middle (MITM) en NFC</h4>
+                    <p>
+                        A diferencia del eavesdropping, el ataque MITM implica una intervención activa en la comunicación,
+                        permitiendo al atacante interceptar y modificar los mensajes intercambiados entre los dispositivos NFC.
+                    </p>
                     <ul>
-                        <li><strong>Descripción:</strong> Retransmisión en tiempo real de comunicación NFC entre un lector legítimo y una tarjeta distante</li>
-                        <li><strong>Componentes:</strong> Dispositivo mole (cercano a la víctima) y dispositivo proxy (cercano al lector)</li>
-                        <li><strong>Bypass:</strong> Elude la restricción de proximidad física de NFC</li>
-                        <li><strong>Uso malicioso:</strong> Realizar transacciones sin conocimiento de la víctima (ej: SuperCard X)</li>
-                        <li><strong>Contramedidas:</strong> Límites de tiempo en transacciones, detección de latencia anormal</li>
+                        <li><strong>Técnicas:</strong> alteración de comandos APDU o manipulación de criptogramas.</li>
+                        <li><strong>Consecuencias:</strong> modificación de importes o redireccionamiento de transacciones.</li>
+                        <li><strong>Detección:</strong> verificación de integridad mediante códigos MAC y autenticación mutua.</li>
                     </ul>
 
-                    <p><strong>Man-in-the-Middle (MITM) en NFC:</strong></p>
+                    <h4>Clonación de tarjetas contactless</h4>
+                    <p>
+                        La clonación busca reproducir la información de una tarjeta NFC para su uso fraudulento.
+                        En sistemas modernos de pago, la tokenización y el uso de datos dinámicos dificultan
+                        considerablemente este tipo de ataques.
+                    </p>
                     <ul>
-                        <li><strong>Descripción:</strong> Interceptación activa y modificación de comunicación entre dispositivos NFC</li>
-                        <li><strong>Técnicas:</strong> Modificación de comandos APDU, alteración de criptogramas</li>
-                        <li><strong>Impacto:</strong> Modificación de montos, redireccionamiento de fondos</li>
-                        <li><strong>Detección:</strong> Verificación de integridad mediante MAC (Message Authentication Code)</li>
+                        <li><strong>Skimming NFC:</strong> lectura no autorizada de datos básicos de la tarjeta.</li>
+                        <li><strong>Limitaciones prácticas:</strong> los tokens no permiten replicar una transacción válida.</li>
+                        <li><strong>Datos potencialmente expuestos:</strong> información parcial como fecha de expiración.</li>
+                        <li><strong>Medidas preventivas:</strong> fundas o carteras con bloqueo RFID.</li>
                     </ul>
 
-                    <p><strong>Clonación de tarjetas:</strong></p>
+                    <h4>Vulnerabilidades en implementaciones</h4>
+                    <p>
+                        Más allá de los ataques al protocolo NFC en sí, muchos riesgos provienen de implementaciones
+                        deficientes o configuraciones inseguras en dispositivos y aplicaciones.
+                    </p>
                     <ul>
-                        <li><strong>Skimming NFC:</strong> Lectura no autorizada de datos de tarjetas contactless</li>
-                        <li><strong>Limitaciones:</strong> Tokenización dificulta clonación efectiva</li>
-                        <li><strong>Datos vulnerables:</strong> Número de tarjeta enmascarado, fecha de expiración</li>
-                        <li><strong>Protección:</strong> Fundas RFID-blocking, billeteras con blindaje electromagnético</li>
-                    </ul>
-
-                    <p><strong>Análisis de vulnerabilidades en implementaciones:</strong></p>
-                    <ul>
-                        <li><strong>Weak cryptography:</strong> Uso de algoritmos obsoletos o claves débiles</li>
-                        <li><strong>Falta de autenticación mutua:</strong> Verificación unidireccional</li>
-                        <li><strong>Session hijacking:</strong> Secuestro de sesiones NFC activas</li>
-                        <li><strong>Denial of Service (DoS):</strong> Interferencia RF para interrumpir comunicaciones</li>
+                        <li><strong>Criptografía débil:</strong> uso de algoritmos obsoletos o claves insuficientes.</li>
+                        <li><strong>Autenticación incompleta:</strong> ausencia de verificación mutua entre dispositivos.</li>
+                        <li><strong>Secuestro de sesión:</strong> explotación de sesiones NFC mal gestionadas.</li>
+                        <li><strong>Denegación de servicio (DoS):</strong> interferencias RF para bloquear la comunicación.</li>
                     </ul>
                 </div>
+
             </div>
         </section>
 

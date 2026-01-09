@@ -195,6 +195,20 @@ nav {
     margin-bottom: 8px;
 }
 
+.concept-card h4 {
+    margin-top: 25px;
+    margin-bottom: 12px;
+
+    font-size: 1.15rem;          
+    font-weight: 600;
+
+    color: #0f3460;              
+
+    padding-left: 10px;
+    border-left: 3px solid #e94560;
+}
+
+
 /* POC Steps */
 .poc-step {
     display: flex;
