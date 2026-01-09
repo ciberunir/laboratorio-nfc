@@ -17,11 +17,11 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#conceptos">Conceptos básicos</a></li>
+                <li><a href="#ataques">Vectores de ataque</a></li>
                 <li><a href="#supercardx">SuperCard X</a></li>
                 <li><a href="#copybara">Copybara</a></li>
                 <li><a href="#proteccion">Protección</a></li>
-                <li><a href="#enlaces">Enlaces de interés</a></li>
-                <li><a href="#autor">Autor</a></li>
+                <li><a href="#enlaces">+Info</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -38,14 +38,20 @@
                 <h2>Fraudes en medios de pago NFC</h2>
                 <p>Análisis técnico de amenazas y vectores de ataque en pagos contactless</p>
                 <a href="#conceptos" class="cta-button">Comenzar</a>
+
             </div>
+            
         </section>
 
         <!-- Conceptos Básicos -->
         <section id="conceptos" class="content-section">
             <div class="container">
                 <h2>Conceptos básicos</h2>
-                
+                <div class="warning-box">
+                    <h4>⚠️ Advertencia</h4>
+                    <p>Este contenido es exclusivamente educativo y de investigación académica. El análisis presentado tiene como objetivo concienciar sobre amenazas reales en medios de pago NFC y promover mejores prácticas de seguridad.</p>
+                </div>
+                <br/>
                 <div class="concept-card">
                     <h3>Tecnología NFC (Near Field Communication)</h3>
                     <p><strong>NFC (Near Field Communication)</strong> es una tecnología de comunicación inalámbrica de corto alcance que permite el intercambio de datos entre dispositivos a distancias de hasta 10 centímetros. Opera en la frecuencia de 13.56 MHz y se basa en el acoplamiento inductivo entre antenas.</p>
@@ -104,7 +110,6 @@
 
                 <div class="concept-card">
                     <h3>Medios de pago NFC</h3>
-
                     <p>
                         Los sistemas de pago basados en NFC permiten realizar transacciones contactless de forma rápida y segura,
                         utilizando la emulación de tarjetas bancarias en dispositivos móviles o tarjetas físicas compatibles.
@@ -169,136 +174,141 @@
                             HCE ofrece mayor flexibilidad y facilidad de despliegue, mientras que el SE proporciona un nivel superior de seguridad física y certificación bancaria.
                     </p>
                 </div>
-
-
-                <div class="concept-card">
-                    <h3>Vectores de ataque en NFC</h3>
-
-                    <p>
-                        Aunque la tecnología NFC incorpora mecanismos de seguridad diseñados para minimizar riesgos,
-                        su naturaleza inalámbrica y de corto alcance la hace vulnerable a determinados vectores de ataque.
-                        Estos ataques pueden afectar a la confidencialidad, integridad o disponibilidad de las comunicaciones
-                        y transacciones.
-                    </p>
-
-                    <h4>Eavesdropping (interceptación de comunicaciones)</h4>
-                    <p>
-                        Consiste en la captura pasiva de las señales de radiofrecuencia intercambiadas durante una comunicación NFC.
-                        Aunque el alcance nominal de NFC es muy reducido, un atacante con equipamiento especializado puede
-                        interceptar la señal a distancias superiores a las previstas.
-                    </p>
-                    <ul>
-                        <li><strong>Alcance potencial:</strong> hasta 1 metro en lectores activos y varios metros en tarjetas pasivas.</li>
-                        <li><strong>Dificultad:</strong> alta, requiere proximidad física y hardware específico.</li>
-                        <li><strong>Mitigación:</strong> cifrado de la comunicación y uso de datos dinámicos por transacción.</li>
-                    </ul>
-                    <p>
-                        En entornos de investigación, la interceptación pasiva de comunicaciones NFC puede realizarse
-                        mediante dispositivos de radio definido por software (SDR) como <a href="https://lab401.com/es-es/products/hackrf-one" target="_blank"><strong>HackRF One</strong></a> o <a href="https://greatscottgadgets.com/bladeRF/" target="_blank"><strong>bladeRF</strong></a>,
-                        que permiten capturar la señal de radiofrecuencia en bruto para su posterior análisis.
-                    </p>
-                    <p>En el siguiente vídeo se muestra un ejemplo práctico de eavesdropping NFC utilizando HackRF:</p>
-
-                    <div class="poc-video">
-                        <button class="video-thumbnail" 
-                                type="button" 
-                                data-video-id="CjeOW-rVc3w"
-                                aria-label="Reproducir vídeo sobre NFC">
-                            <img src="https://img.youtube.com/vi/CjeOW-rVc3w/hqdefault.jpg" 
-                                alt="Lets Hack into NFC using HackRF/SDR | Key Technology behind Apple Pay, Samsung Pay, Google Pay">
-                            <span class="play-icon" aria-hidden="true">▶</span>
-                        </button>
-                    </div>
-                    <h4>Relay attack (ataque de retransmisión)</h4>
-                    <p>
-                        En este tipo de ataque, el adversario actúa como intermediario retransmitiendo en tiempo real
-                        la comunicación entre un lector legítimo y una tarjeta o dispositivo que se encuentra a mayor distancia.
-                        De este modo, se elude la restricción de proximidad física que caracteriza a NFC.
-                    </p>
-                    <ul>
-                        <li><strong>Arquitectura típica:</strong> un dispositivo cercano a la víctima y otro próximo al lector.</li>
-                        <li><strong>Impacto:</strong> posibilidad de realizar transacciones sin el conocimiento del usuario.</li>
-                        <li><strong>Ejemplos:</strong> ataques prácticos como <a href="#supercardx">SuperCard X</a> o <a href="#copybara">Copybara</a>.</li>
-                        <li><strong>Contramedidas:</strong> límites estrictos de tiempo y detección de latencias anómalas.</li>
-                    </ul>
-                    <p>El siguiente vídeo corresponde a la ponencia "The Art Of Relay And Replay Attacks", de <a href="https://salmg.net/" target="_blank">Salvador Mendoza</a>.</p>
-
-                    <div class="poc-video">
-                        <button class="video-thumbnail" 
-                                type="button" 
-                                data-video-id="iiV7iSwX2bI"
-                                aria-label="Pagos NFC El arte de la retransmisión y la repetición Ataques Salvador Mendoza">
-                            <img src="https://img.youtube.com/vi/iiV7iSwX2bI/hqdefault.jpg" 
-                                alt="Pagos NFC El arte de la retransmisión y la repetición Ataques Salvador Mendoza">
-                            <span class="play-icon" aria-hidden="true">▶</span>
-                        </button>
-                    </div>
-
-                    <h4>Man-in-the-Middle (MITM) en NFC</h4>
-                    <p>
-                        El ataque MITM implica una intervención <strong>activa</strong> en la comunicación, permitiendo al atacante interceptar <strong> y modificar</strong> los mensajes intercambiados entre los dispositivos NFC. Esto contrasta con el ataque eavesdropping, que es pasivo, y el relay attack, que no modifica los mensajes.
-                    </p>
-                    <ul>
-                        <li><strong>Técnicas:</strong> alteración de comandos APDU o manipulación de criptogramas.</li>
-                        <li><strong>Consecuencias:</strong> modificación de importes o redireccionamiento de transacciones.</li>
-                        <li><strong>Detección:</strong> verificación de integridad mediante códigos MAC y autenticación mutua.</li>
-                    </ul>
-
-                    <h4>Clonación de tarjetas contactless</h4>
-                    <p>
-                        La clonación busca reproducir la información de una tarjeta NFC para su uso fraudulento.
-                        En sistemas modernos de pago, la tokenización y el uso de datos dinámicos dificultan
-                        considerablemente este tipo de ataques.
-                    </p>
-                    <ul>
-                        <li><strong>Skimming NFC:</strong> lectura no autorizada de datos básicos de la tarjeta.</li>
-                        <li><strong>Limitaciones prácticas:</strong> los tokens no permiten replicar una transacción válida.</li>
-                        <li><strong>Datos potencialmente expuestos:</strong> información parcial como fecha de expiración.</li>
-                        <li><strong>Medidas preventivas:</strong> fundas o carteras con bloqueo RFID.</li>
-                    </ul>
-                    <p>Existen muchas herramientas para clonar tarjetas NFC. Algunas de las más populares son <a href="https://lab401.com/es-es/products/flipper-zero" target="_blank">Flipper Zero</a> o <a href="https://lab401.com/es-es/products/proxmark-3-rdv4" target="_blank">Proxmark 3</a>. En el siguiente vídeo se muestra cómo se utiliza para clonar una tarjeta NFC.</p>
-
-                    <div class="poc-video">
-                        <button class="video-thumbnail" 
-                                type="button" 
-                                data-video-id="kYjgx8OLFK0"
-                                aria-label="Cómo clonar tarjetas con el Flipper Zero">
-                            <img src="https://img.youtube.com/vi/kYjgx8OLFK0/hqdefault.jpg" 
-                                alt="Cómo clonar tarjetas con el Flipper Zero">
-                            <span class="play-icon" aria-hidden="true">▶</span>
-                        </button>
-                    </div>
-
-                    <h4>Vulnerabilidades en implementaciones</h4>
-                    <p>
-                        Más allá de los ataques al protocolo NFC en sí, muchos riesgos provienen de implementaciones
-                        deficientes o configuraciones inseguras en dispositivos y aplicaciones.
-                    </p>
-                    <ul>
-                        <li><strong>Criptografía débil:</strong> uso de algoritmos obsoletos o claves insuficientes.</li>
-                        <li><strong>Autenticación incompleta:</strong> ausencia de verificación mutua entre dispositivos.</li>
-                        <li><strong>Secuestro de sesión:</strong> explotación de sesiones NFC mal gestionadas.</li>
-                        <li><strong>Denegación de servicio (DoS):</strong> interferencias RF para bloquear la comunicación.</li>
-                    </ul>
-                </div>
-
             </div>
         </section>
+
+<!-- Vectores de ataque -->
+<section id="ataques" class="content-section alt-bg">
+    <div class="container">
+        <h2>Vectores de ataque en NFC</h2>
+        <div class="warning-box">
+            <h4>⚠️ Advertencia</h4>
+            <p>Este contenido es exclusivamente educativo y de investigación académica. El análisis presentado tiene como objetivo concienciar sobre amenazas reales en medios de pago NFC y promover mejores prácticas de seguridad.</p>
+        </div>
+        <br/>
+        <div class="concept-card">
+            <p>
+                Aunque la tecnología NFC incorpora mecanismos de seguridad diseñados para minimizar riesgos,
+                su naturaleza inalámbrica y de corto alcance la hace vulnerable a determinados vectores de ataque.
+                Estos ataques pueden afectar a la confidencialidad, integridad o disponibilidad de las comunicaciones
+                y transacciones.
+            </p>
+
+            <h4>Eavesdropping (interceptación de comunicaciones)</h4>
+            <p>
+                Consiste en la captura pasiva de las señales de radiofrecuencia intercambiadas durante una comunicación NFC.
+                Aunque el alcance nominal de NFC es muy reducido, un atacante con equipamiento especializado puede
+                interceptar la señal a distancias superiores a las previstas.
+            </p>
+            <ul>
+                <li><strong>Alcance potencial:</strong> hasta 1 metro en lectores activos y varios metros en tarjetas pasivas.</li>
+                <li><strong>Dificultad:</strong> alta, requiere proximidad física y hardware específico.</li>
+                <li><strong>Mitigación:</strong> cifrado de la comunicación y uso de datos dinámicos por transacción.</li>
+            </ul>
+            <p>
+                En entornos de investigación, la interceptación pasiva de comunicaciones NFC puede realizarse
+                mediante dispositivos de radio definido por software (SDR) como <a href="https://lab401.com/es-es/products/hackrf-one" target="_blank"><strong>HackRF One</strong></a> o <a href="https://greatscottgadgets.com/bladeRF/" target="_blank"><strong>BladeRF</strong></a>,
+                que permiten capturar la señal de radiofrecuencia en bruto para su posterior análisis.
+            </p>
+            <p>En el siguiente vídeo se muestra un ejemplo práctico de eavesdropping NFC utilizando HackRF:</p>
+
+            <div class="poc-video">
+                <button class="video-thumbnail" 
+                        type="button" 
+                        data-video-id="CjeOW-rVc3w"
+                        aria-label="Reproducir vídeo sobre NFC">
+                    <img src="https://img.youtube.com/vi/CjeOW-rVc3w/hqdefault.jpg" 
+                        alt="Lets Hack into NFC using HackRF/SDR | Key Technology behind Apple Pay, Samsung Pay, Google Pay">
+                    <span class="play-icon" aria-hidden="true">▶</span>
+                </button>
+            </div>
+            <h4>Relay attack (ataque de retransmisión)</h4>
+            <p>
+                En este tipo de ataque, el adversario actúa como intermediario retransmitiendo en tiempo real
+                la comunicación entre un lector legítimo y una tarjeta o dispositivo que se encuentra a mayor distancia.
+                De este modo, se elude la restricción de proximidad física que caracteriza a NFC.
+            </p>
+            <ul>
+                <li><strong>Arquitectura típica:</strong> un dispositivo cercano a la víctima y otro próximo al lector.</li>
+                <li><strong>Impacto:</strong> posibilidad de realizar transacciones sin el conocimiento del usuario.</li>
+                <li><strong>Ejemplos:</strong> ataques prácticos como <a href="#supercardx">SuperCard X</a> o <a href="#copybara">Copybara</a>.</li>
+                <li><strong>Contramedidas:</strong> límites estrictos de tiempo y detección de latencias anómalas.</li>
+            </ul>
+            <p>El siguiente vídeo corresponde a la ponencia "The Art Of Relay And Replay Attacks", de <a href="https://salmg.net/" target="_blank">Salvador Mendoza</a>.</p>
+
+            <div class="poc-video">
+                <button class="video-thumbnail" 
+                        type="button" 
+                        data-video-id="iiV7iSwX2bI"
+                        aria-label="Pagos NFC El arte de la retransmisión y la repetición Ataques Salvador Mendoza">
+                    <img src="https://img.youtube.com/vi/iiV7iSwX2bI/hqdefault.jpg" 
+                        alt="Pagos NFC El arte de la retransmisión y la repetición Ataques Salvador Mendoza">
+                    <span class="play-icon" aria-hidden="true">▶</span>
+                </button>
+            </div>
+
+            <h4>Man-in-the-Middle (MITM) en NFC</h4>
+            <p>
+                El ataque MITM implica una intervención <strong>activa</strong> en la comunicación, permitiendo al atacante interceptar <strong> y modificar</strong> los mensajes intercambiados entre los dispositivos NFC. Esto contrasta con el ataque eavesdropping, que es pasivo, y el relay attack, que no modifica los mensajes.
+            </p>
+            <ul>
+                <li><strong>Técnicas:</strong> alteración de comandos APDU o manipulación de criptogramas.</li>
+                <li><strong>Consecuencias:</strong> modificación de importes o redireccionamiento de transacciones.</li>
+                <li><strong>Detección:</strong> verificación de integridad mediante códigos MAC y autenticación mutua.</li>
+            </ul>
+
+            <h4>Clonación de tarjetas contactless</h4>
+            <p>
+                La clonación busca reproducir la información de una tarjeta NFC para su uso fraudulento.
+                En sistemas modernos de pago, la tokenización y el uso de datos dinámicos dificultan
+                considerablemente este tipo de ataques.
+            </p>
+            <ul>
+                <li><strong>Skimming NFC:</strong> lectura no autorizada de datos básicos de la tarjeta.</li>
+                <li><strong>Limitaciones prácticas:</strong> los tokens no permiten replicar una transacción válida.</li>
+                <li><strong>Datos potencialmente expuestos:</strong> información parcial como fecha de expiración.</li>
+                <li><strong>Medidas preventivas:</strong> fundas o carteras con bloqueo RFID.</li>
+            </ul>
+            <p>Existen muchas herramientas para clonar tarjetas NFC. Algunas de las más populares son <a href="https://lab401.com/es-es/products/flipper-zero" target="_blank">Flipper Zero</a> o <a href="https://lab401.com/es-es/products/proxmark-3-rdv4" target="_blank">Proxmark 3</a>. En el siguiente vídeo se muestra cómo se utiliza para clonar una tarjeta NFC.</p>
+
+            <div class="poc-video">
+                <button class="video-thumbnail" 
+                        type="button" 
+                        data-video-id="kYjgx8OLFK0"
+                        aria-label="Cómo clonar tarjetas con el Flipper Zero">
+                    <img src="https://img.youtube.com/vi/kYjgx8OLFK0/hqdefault.jpg" 
+                        alt="Cómo clonar tarjetas con el Flipper Zero">
+                    <span class="play-icon" aria-hidden="true">▶</span>
+                </button>
+            </div>
+
+            <h4>Vulnerabilidades en implementaciones</h4>
+            <p>
+                Más allá de los ataques al protocolo NFC en sí, muchos riesgos provienen de implementaciones
+                deficientes o configuraciones inseguras en dispositivos y aplicaciones.
+            </p>
+            <ul>
+                <li><strong>Criptografía débil:</strong> uso de algoritmos obsoletos o claves insuficientes.</li>
+                <li><strong>Autenticación incompleta:</strong> ausencia de verificación mutua entre dispositivos.</li>
+                <li><strong>Secuestro de sesión:</strong> explotación de sesiones NFC mal gestionadas.</li>
+                <li><strong>Denegación de servicio (DoS):</strong> interferencias RF para bloquear la comunicación.</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
         <!-- SuperCard X -->
         <section id="supercardx" class="content-section alt-bg">
             <div class="container">
                 <h2>SuperCard X</h2>
-                
                 <div class="warning-box">
                     <h4>⚠️ Advertencia</h4>
                     <p>Este contenido es exclusivamente educativo y de investigación académica. El análisis presentado tiene como objetivo concienciar sobre amenazas reales en medios de pago NFC y promover mejores prácticas de seguridad.</p>
                 </div>
                 <br/>
-
                 <div class="variation-card">
                     <h3>Descripción técnica</h3>
-                    <p><strong>SuperCard X</strong> es una plataforma de Malware-as-a-Service (MaaS) especializada en fraudes mediante ataques de retransmisión NFC (relay attacks). Descubierto y documentado por investigadores de seguridad de Cleafy en 2024, representa una amenaza significativa para usuarios de servicios de pago contactless.</p>
+                    <p><strong>SuperCard X</strong> es una plataforma de Malware-as-a-Service (MaaS) especializada en fraudes mediante ataques de retransmisión NFC (relay attacks). Descubierto y documentado por investigadores de seguridad de <a href="https://www.cleafy.com/cleafy-labs/supercardx-exposing-chinese-speaker-maas-for-nfc-relay-fraud-operation" target="_blank">Cleafy</a> en 2024, representa una amenaza significativa para usuarios de servicios de pago contactless.</p>
                     <figure class="diagram-figure">
                         <img src="img/supercardx_cleafy.png" alt="Formato original de la pantalla del malware SuperCardX" class="diagram-image">
                         <figcaption class="image-caption">Formato original de la pantalla del malware SuperCardX. Fuente: Cleafy</figcaption>
@@ -306,117 +316,136 @@
                     <p>Este malware opera como un servicio comercial en mercados clandestinos, permitiendo a atacantes sin conocimientos técnicos avanzados realizar fraudes sofisticados mediante una interfaz simplificada y soporte técnico incluido.</p>
                     <p><strong>Características principales:</strong></p>
                     <ul>
-                        <li><strong>Modelo MaaS:</strong> Comercializado como servicio de suscripción en foros underground</li>
-                        <li><strong>Soporte multi-plataforma:</strong> Compatible con dispositivos Android comprometidos</li>
-                        <li><strong>Panel de administración:</strong> Interfaz web para gestión de dispositivos infectados</li>
-                        <li><strong>Actualizaciones remotas:</strong> Capacidad de actualización de payloads sin interacción del usuario</li>
+                        <li><strong>Modelo MaaS:</strong> comercializado como servicio de suscripción en foros underground.</li>
+                        <li><strong>Soporte multi-plataforma:</strong> compatible con dispositivos Android comprometidos.</li>
+                        <li><strong>Panel de administración:</strong> interfaz web para gestión de dispositivos infectados.</li>
+                        <li><strong>Actualizaciones remotas:</strong> capacidad de actualización de payloads sin interacción del usuario.</li>
                     </ul>
                 </div>
 
                 <div class="variation-card">
                     <h3>Arquitectura del ataque</h3>
-                    <p>La operación de SuperCard X se basa en una arquitectura distribuida de tres componentes que trabajan de forma coordinada para ejecutar el fraude:</p>
+
+                    <p>
+                        SuperCard X implementa un ataque de retransmisión NFC apoyándose en una arquitectura distribuida.
+                        El objetivo no es romper el cifrado ni modificar la transacción, sino capturar una comunicación
+                        legítima y reutilizarla en tiempo real desde otro punto físico.
+                    </p>
+
                     <figure class="diagram-figure">
-                        <img src="img/esquema_supercardx.png" alt="Arquitectura del ataque SuperCard X, diagrama técnico que muestra tres componentes principales conectados por flechas: Componente móvil dispositivo de la víctima que captura comunicaciones NFC; Componente de retransmisión dispositivo del atacante que emula la tarjeta ante un terminal POS; Infraestructura de backend servidores C and C que coordinan y almacenan datos. Flechas indican flujo de datos: captura NFC hacia servidor C and C, transmisión cifrada y retransmisión al emulador. Fondo de diagrama con cajas y etiquetas que incluyen los textos Componente móvil, Componente de retransmisión e Infraestructura de backend. Tono informativo y neutro" class="diagram-image">
-                        <figcaption class="image-caption">Esquema del funcionamiento de Supercard X. Fuente: Cleafy</figcaption>
+                        <img src="img/esquema_supercardx.png"
+                            alt="Arquitectura del ataque SuperCard X con dispositivo de la víctima, dispositivo del atacante e infraestructura C&C"
+                            class="diagram-image">
+                        <figcaption class="image-caption">
+                            Esquema del funcionamiento de SuperCard X. Fuente: Cleafy
+                        </figcaption>
                     </figure>
-                    <p><strong>1. Componente móvil (dispositivo de la víctima):</strong></p>
-                    <ul>
-                        <li><strong>Malware Android:</strong> Aplicación troyanizada que se ejecuta en segundo plano</li>
-                        <li><strong>Captura NFC:</strong> Intercepta comunicaciones entre la tarjeta/dispositivo de pago y el terminal</li>
-                        <li><strong>Transmisión en tiempo real:</strong> Envía datos capturados al servidor C&amp;C mediante canal cifrado</li>
-                        <li><strong>Persistencia:</strong> Mecanismos de auto-protección y resistencia a eliminación</li>
-                    </ul>
 
-                    <p><strong>2. Componente de retransmisión (dispositivo del atacante):</strong></p>
-                    <ul>
-                        <li><strong>Hardware especializado:</strong> Dispositivo NFC configurado para emular tarjetas</li>
-                        <li><strong>Receptor de datos:</strong> Recibe credenciales en tiempo real desde el servidor C&amp;C</li>
-                        <li><strong>Emulación de tarjeta:</strong> Se presenta como una tarjeta de pago legítima ante terminales POS</li>
-                        <li><strong>Sincronización temporal:</strong> Mantiene latencia mínima para evitar timeouts de transacción</li>
-                    </ul>
+                    <p>
+                        El primer elemento del ataque es el <strong>dispositivo de la víctima</strong>. Se trata de un terminal
+                        Android comprometido mediante una aplicación maliciosa, normalmente distribuida a través de campañas
+                        de ingeniería social. Este malware permanece activo en segundo plano y monitoriza las comunicaciones NFC
+                        cuando la víctima realiza un pago contactless. Los datos intercambiados con el lector no se almacenan
+                        localmente, sino que se envían de inmediato a la infraestructura del atacante.
+                    </p>
 
-                    <p><strong>3. Infraestructura de backend (servidores C&amp;C):</strong></p>
-                    <ul>
-                        <li><strong>Servidor de <i>command&control</i>:</strong> Coordina la comunicación entre componentes</li>
-                        <li><strong>Base de datos de víctimas:</strong> Almacena información de dispositivos comprometidos</li>
-                        <li><strong>Panel de administración:</strong> Interfaz web para operadores del malware</li>
-                        <li><strong>Anonimización:</strong> Uso de redes Tor y VPN para ocultar ubicación de servidores</li>
-                    </ul>
+                    <p>
+                        El segundo componente es el <strong>dispositivo de retransmisión</strong>, controlado por el atacante.
+                        Este dispositivo recibe los datos capturados y los presenta ante un terminal POS utilizando emulación
+                        de tarjeta NFC. Desde el punto de vista del lector, la transacción parece legítima. El éxito del ataque
+                        depende de mantener una latencia muy baja, ya que cualquier retraso excesivo provoca la cancelación
+                        automática de la operación.
+                    </p>
+
+                    <p>
+                        Entre ambos extremos se sitúa la <strong>infraestructura de backend</strong>, que actúa como nodo de
+                        coordinación. Estos servidores gestionan las sesiones activas, encaminan los datos en tiempo real
+                        y permiten a los operadores controlar el ataque mediante un panel de administración. Para dificultar
+                        la atribución, esta infraestructura suele desplegarse sobre redes de anonimización y servicios VPN.
+                    </p>
                 </div>
+
 
                 <div class="variation-card">
                     <h3>Funcionamiento del relay attack</h3>
-                    <p>El proceso de ataque mediante SuperCard X sigue una secuencia específica que permite al atacante realizar transacciones fraudulentas sin necesidad de robar físicamente la tarjeta o dispositivo de pago:</p>
-                    
-                    <p><strong>Fase 1: Infección del dispositivo móvil</strong></p>
-                    <ul>
-                        <li>Distribución mediante aplicaciones troyanizadas en tiendas no oficiales</li>
-                        <li>Ingeniería social: mensajes de phishing con enlaces a APKs maliciosos</li>
-                        <li>Explotación de vulnerabilidades en aplicaciones legítimas</li>
-                        <li>Solicitud de permisos críticos: NFC, accesibilidad, administración de dispositivo</li>
-                    </ul>
 
-                    <p><strong>Fase 2: Interceptación de comunicaciones NFC</strong></p>
-                    <ul>
-                        <li>El malware monitoriza activamente transacciones NFC del dispositivo</li>
-                        <li>Captura comandos APDU (Application Protocol Data Unit) en tiempo real</li>
-                        <li>Extrae datos de tarjetas virtuales (DPAN) y credenciales de pago</li>
-                        <li>Cifra y transmite información al servidor C&amp;C mediante protocolo propietario</li>
-                    </ul>
+                    <p>
+                        El ataque llevado a cabo por SuperCard X no requiere la sustracción física de la tarjeta ni del
+                        dispositivo de pago. En su lugar, se basa en interceptar una transacción legítima y retransmitirla
+                        en tiempo real para su uso fraudulento desde otra ubicación.
+                    </p>
 
-                    <p><strong>Fase 3: Retransmisión a dispositivo del atacante</strong></p>
-                    <ul>
-                        <li>Servidor C&amp;C reenvía datos capturados al dispositivo del atacante</li>
-                        <li>Dispositivo del atacante emula la tarjeta de la víctima</li>
-                        <li>Sincronización de timing: latencia típica &lt; 500ms para evitar timeouts</li>
-                        <li>Completación de desafío-respuesta criptográfico con terminal POS</li>
-                    </ul>
+                    <p>
+                        El proceso comienza con la <strong>infección del dispositivo móvil de la víctima</strong>. El malware
+                        suele distribuirse a través de aplicaciones troyanizadas o campañas de phishing que inducen a la
+                        instalación de un APK malicioso. Durante la instalación, la aplicación solicita permisos críticos,
+                        como acceso a NFC o servicios de accesibilidad, necesarios para observar el comportamiento del
+                        sistema durante una transacción.
+                    </p>
 
-                    <p><strong>Fase 4: Realización de transacciones fraudulentas</strong></p>
-                    <ul>
-                        <li>Atacante acerca dispositivo emulador a terminal de pago</li>
-                        <li>Terminal interactúa con dispositivo creyendo que es la tarjeta legítima</li>
-                        <li>Transacción completada sin conocimiento de la víctima</li>
-                        <li>Posibilidad de realizar múltiples transacciones antes de detección</li>
-                    </ul>
+                    <p>
+                        Una vez activo, el malware permanece a la espera de una operación contactless. Cuando la víctima
+                        realiza un pago, el software malicioso <strong>intercepta la comunicación NFC</strong> y captura los
+                        mensajes intercambiados entre el dispositivo y el terminal, incluyendo comandos APDU y datos
+                        asociados a la tarjeta virtual utilizada.
+                    </p>
+
+                    <p>
+                        La información capturada no se procesa localmente. Se cifra y se envía de forma inmediata a la
+                        infraestructura de control del atacante, que actúa como intermediario entre la víctima y el
+                        dispositivo de retransmisión.
+                    </p>
+
+                    <p>
+                        En el extremo del atacante, un segundo dispositivo recibe los datos y los utiliza para
+                        <strong>emular la tarjeta de la víctima</strong> frente a un terminal POS. La retransmisión debe
+                        realizarse con una latencia muy reducida, ya que los protocolos de pago imponen límites estrictos
+                        de tiempo para completar la transacción.
+                    </p>
+
+                    <p>
+                        Desde la perspectiva del terminal, el intercambio es indistinguible de una operación legítima.
+                        La transacción se completa sin que la víctima tenga conocimiento inmediato del uso fraudulento,
+                        lo que permite al atacante ejecutar una o varias operaciones antes de que el fraude sea detectado.
+                    </p>
                 </div>
+
 
                 <div class="variation-card">
                     <h3>Técnicas de evasión</h3>
                     <p>SuperCard X implementa múltiples técnicas de evasión para evitar detección por soluciones de seguridad móvil y análisis forense:</p>
                     
-                    <p><strong>Ocultamiento en aplicaciones legítimas:</strong></p>
+                    <p><strong>Ocultamiento en aplicaciones legítimas</strong></p>
                     <ul>
-                        <li><strong>Repackaging:</strong> Inyección de código malicioso en APKs de aplicaciones populares</li>
-                        <li><strong>Firmado con certificados válidos:</strong> Uso de certificados comprometidos o robados</li>
-                        <li><strong>Nombres genéricos:</strong> Nomenclatura de procesos que imitan servicios del sistema</li>
-                        <li><strong>Ocultación de ícono:</strong> Eliminación del launcher icon tras instalación</li>
+                        <li><strong>Repackaging:</strong> inyección de código malicioso en APKs de aplicaciones populares.</li>
+                        <li><strong>Firmado con certificados válidos:</strong> uso de certificados comprometidos o robados.</li>
+                        <li><strong>Nombres genéricos:</strong> nomenclatura de procesos que imitan servicios del sistema.</li>
+                        <li><strong>Ocultación de ícono:</strong> eliminación del launcher icon tras instalación.</li>
                     </ul>
-
-                    <p><strong>Evasión de Google Play Protect:</strong></p>
+                    <br/>
+                    <p><strong>Evasión de Google Play Protect</strong></p>
                     <ul>
-                        <li><strong>Delayed payload:</strong> Descarga de componentes maliciosos post-instalación</li>
-                        <li><strong>Ofuscación de permisos:</strong> Solicitud gradual de permisos peligrosos</li>
-                        <li><strong>Detección de sandbox:</strong> Identificación de entornos de análisis (emuladores, VM)</li>
-                        <li><strong>Comportamiento adaptativo:</strong> Inactividad ante detección de análisis dinámico</li>
+                        <li><strong>Delayed payload:</strong> descarga de componentes maliciosos post-instalación.</li>
+                        <li><strong>Ofuscación de permisos:</strong> solicitud gradual de permisos peligrosos.</li>
+                        <li><strong>Detección de sandbox:</strong> identificación de entornos de análisis (emuladores, VM).</li>
+                        <li><strong>Comportamiento adaptativo:</strong> inactividad ante detección de análisis dinámico.</li>
                     </ul>
-
-                    <p><strong>Técnicas anti-análisis:</strong></p>
+                    <br/>
+                    <p><strong>Técnicas anti-análisis</strong></p>
                     <ul>
-                        <li><strong>Ofuscación de código:</strong> Uso de ProGuard, DexGuard y packers personalizados</li>
-                        <li><strong>Cifrado de strings:</strong> Cadenas críticas cifradas en tiempo de ejecución</li>
-                        <li><strong>Anti-debugging:</strong> Detección de debuggers y herramientas de análisis</li>
-                        <li><strong>Integrity checking:</strong> Verificación de integridad del APK para detectar modificaciones</li>
-                        <li><strong>Native code:</strong> Componentes críticos implementados en C/C++ (NDK)</li>
+                        <li><strong>Ofuscación de código:</strong> uso de ProGuard, DexGuard y packers personalizados.</li>
+                        <li><strong>Cifrado de strings:</strong> cadenas críticas cifradas en tiempo de ejecución.</li>
+                        <li><strong>Anti-debugging:</strong> detección de debuggers y herramientas de análisis.</li>
+                        <li><strong>Integrity checking:</strong> verificación de integridad del APK para detectar modificaciones.</li>
+                        <li><strong>Native code:</strong> componentes críticos implementados en C/C++ (NDK).</li>
                     </ul>
-
-                    <p><strong>Comunicación C&amp;C cifrada:</strong></p>
+                    <br/>
+                    <p><strong>Comunicación C&amp;C cifrada</strong></p>
                     <ul>
-                        <li><strong>Protocolo propietario:</strong> Comunicación no basada en HTTP estándar</li>
-                        <li><strong>Cifrado AES-256:</strong> Protección de datos transmitidos</li>
-                        <li><strong>Domain Generation Algorithm (DGA):</strong> Generación dinámica de dominios C&amp;C</li>
-                        <li><strong>Fast-flux networks:</strong> Cambio rápido de IPs asociadas a dominios</li>
+                        <li><strong>Protocolo propietario:</strong> comunicación no basada en HTTP estándar.</li>
+                        <li><strong>Cifrado AES-256:</strong> protección de datos transmitidos.</li>
+                        <li><strong>Domain Generation Algorithm (DGA):</strong> generación dinámica de dominios C&amp;C.</li>
+                        <li><strong>Fast-flux networks:</strong> cambio rápido de IPs asociadas a dominios.</li>
                     </ul>
                 </div>
 
@@ -424,11 +453,11 @@
                     <h3>Vectores de infección</h3>
                     <p>Los operadores de SuperCard X utilizan múltiples vectores para comprometer dispositivos móviles:</p>
                     <ul>
-                        <li><strong>Aplicaciones troyanizadas:</strong> Apps populares modificadas y redistribuidas en tiendas no oficiales</li>
-                        <li><strong>Phishing via SMS (Smishing):</strong> Mensajes SMS con enlaces a descargas maliciosas</li>
-                        <li><strong>Ingeniería social:</strong> Campañas dirigidas mediante redes sociales y mensajería</li>
-                        <li><strong>Malvertising:</strong> Publicidad maliciosa que redirige a descargas de APKs</li>
-                        <li><strong>Watering hole attacks:</strong> Compromiso de sitios web frecuentados por público objetivo</li>
+                        <li><strong>Aplicaciones troyanizadas:</strong> apps populares modificadas y redistribuidas en tiendas no oficiales.</li>
+                        <li><strong>Phishing via SMS (Smishing):</strong> mensajes SMS con enlaces a descargas maliciosas.</li>
+                        <li><strong>Ingeniería social:</strong> campañas dirigidas mediante redes sociales y mensajería.</li>
+                        <li><strong>Malvertising:</strong> publicidad maliciosa que redirige a descargas de APKs.</li>
+                        <li><strong>Watering hole attacks:</strong> compromiso de sitios web frecuentados por público objetivo.</li>
                     </ul>
                 </div>
 
@@ -438,58 +467,24 @@
                     
                     <p><strong>Hashes de archivos (ejemplos):</strong></p>
                     <ul>
-                        <li>SHA-256: Variantes específicas documentadas en reportes de Cleafy y Verimatrix</li>
-                        <li>Archivos APK con nombres genéricos: "SystemUpdate.apk", "SecurityPatch.apk"</li>
+                        <li>SHA-256: Variantes específicas documentadas en reportes de Cleafy y Verimatrix.</li>
+                        <li>Archivos APK con nombres genéricos: "SystemUpdate.apk", "SecurityPatch.apk".</li>
                     </ul>
 
                     <p><strong>Dominios C&amp;C:</strong></p>
                     <ul>
-                        <li>Dominios de aspecto legítimo registrados recientemente</li>
-                        <li>Uso de subdominios dinámicos y servicios DNS gratuitos</li>
-                        <li>Infraestructura alojada en proveedores tolerantes a abuse</li>
+                        <li>Dominios de aspecto legítimo registrados recientemente.</li>
+                        <li>Uso de subdominios dinámicos y servicios DNS gratuitos.</li>
+                        <li>Infraestructura alojada en proveedores tolerantes a abuse.</li>
                     </ul>
 
                     <p><strong>Patrones de comportamiento:</strong></p>
                     <ul>
-                        <li>Solicitud de permisos NFC y accesibilidad simultáneamente</li>
-                        <li>Actividad de red inusual durante transacciones NFC</li>
-                        <li>Procesos en segundo plano persistentes con nombres de sistema</li>
-                        <li>Drenaje anómalo de batería y uso elevado de CPU</li>
-                        <li>Conexiones a puertos no estándar (no 80/443)</li>
-                    </ul>
-                </div>
-
-                <div class="variation-card">
-                    <h3>Casos documentados e impacto</h3>
-                    <p>Según investigaciones de Cleafy Labs y reportes de seguridad de Verimatrix:</p>
-                    <ul>
-                        <li><strong>Alcance geográfico:</strong> Campañas detectadas principalmente en Asia-Pacífico, con expansión a Europa</li>
-                        <li><strong>Víctimas identificadas:</strong> Miles de dispositivos comprometidos según telemetría de seguridad</li>
-                        <li><strong>Servicios objetivos:</strong> Apple Pay, Google Pay, Samsung Pay y aplicaciones bancarias con NFC</li>
-                        <li><strong>Modus operandi:</strong> Transacciones de bajo monto para evitar alertas de fraude</li>
-                        <li><strong>Monetización:</strong> Modelo de suscripción mensual para atacantes (500-2000 USD/mes)</li>
-                    </ul>
-                </div>
-
-                <div class="poc-video">
-                    <button class="video-thumbnail" 
-                            type="button" 
-                            data-video-id="QrqZl2QIz0M"
-                            aria-label="Reproducir vídeo sobre NFC">
-                        <img src="https://img.youtube.com/vi/QrqZl2QIz0M/hqdefault.jpg" 
-                             alt="How NFC Works - Video explicativo">
-                        <span class="play-icon" aria-hidden="true">▶</span>
-                    </button>
-                </div>
-
-                <div class="variation-card">
-                    <h3>Recursos e imágenes de análisis</h3>
-                    <p>Para una comprensión más profunda del funcionamiento de SuperCard X, se recomienda consultar los siguientes recursos visuales y análisis técnicos:</p>
-                    <ul>
-                        <li><strong>Diagrama de flujo del ataque:</strong> <a href="https://www.cleafy.com/cleafy-labs/supercardx-exposing-chinese-speaker-maas-for-nfc-relay-fraud-operation" target="_blank">Análisis completo de Cleafy Labs</a></li>
-                        <li><strong>Arquitectura del malware:</strong> Diagramas técnicos disponibles en el reporte de Cleafy</li>
-                        <li><strong>Capturas de análisis forense:</strong> Evidencias de comportamiento malicioso documentadas por investigadores</li>
-                        <li><strong>Análisis de tráfico de red:</strong> Patrones de comunicación C&amp;C identificados</li>
+                        <li>Solicitud de permisos NFC y accesibilidad simultáneamente.</li>
+                        <li>Actividad de red inusual durante transacciones NFC.</li>
+                        <li>Procesos en segundo plano persistentes con nombres de sistema.</li>
+                        <li>Drenaje anómalo de batería y uso elevado de CPU.</li>
+                        <li>Conexiones a puertos no estándar (no 80/443).</li>
                     </ul>
                 </div>
             </div>
@@ -502,14 +497,14 @@
 
                 <div class="variation-card">
                     <h3>Descripción general</h3>
-                    <p><strong>Copybara</strong> es un troyano bancario sofisticado para Android que ha estado activo desde años anteriores, representando una amenaza persistente para usuarios de servicios bancarios móviles, particularmente en España y Latinoamérica.</p>
+                    <p><strong>Copybara</strong> es un troyano bancario sofisticado para Android que ha estado activo los últimos años, representando una amenaza persistente para usuarios de servicios bancarios móviles, particularmente en España y Latinoamérica.</p>
                     <p>A diferencia de SuperCard X que se enfoca en ataques de retransmisión NFC, Copybara utiliza técnicas de <strong>overlay attacks</strong> (superposición de pantallas) para robar credenciales bancarias directamente desde el dispositivo de la víctima.</p>
                     <p><strong>Características distintivas:</strong></p>
                     <ul>
-                        <li><strong>Malware bancario tradicional:</strong> Enfocado en robo de credenciales de acceso</li>
-                        <li><strong>Objetivo primario:</strong> Aplicaciones bancarias y de criptomonedas</li>
-                        <li><strong>Persistencia avanzada:</strong> Resistente a intentos de eliminación</li>
-                        <li><strong>Capacidades RAT:</strong> Control remoto completo del dispositivo comprometido</li>
+                        <li><strong>Malware bancario tradicional</strong>, enfocado en robo de credenciales de acceso.</li>
+                        <li>Su principal objetivo son las <strong>aplicaciones bancarias y de criptomonedas</strong>.</li>
+                        <li>Es resistente a intentos de eliminación <strong>(persistencia avanzada).</strong></li>
+                        <li>Tiene <strong>capacidades RAT</strong> (control remoto completo del dispositivo comprometido).</li>
                     </ul>
                 </div>
 
@@ -517,113 +512,122 @@
                     <h3>Capacidades del malware</h3>
                     <p>Copybara implementa un arsenal completo de funcionalidades maliciosas que lo convierten en una amenaza multifacética:</p>
                     
-                    <p><strong>Overlay attacks (Superposición de pantallas falsas):</strong></p>
+                    <p><strong>Overlay attacks (Superposición de pantallas falsas)</strong></p>
                     <ul>
-                        <li><strong>Detección de aplicaciones objetivo:</strong> Monitoriza apps bancarias instaladas</li>
-                        <li><strong>Ventanas falsas:</strong> Superposición de interfaces de login idénticas a las legítimas</li>
-                        <li><strong>Captura de credenciales:</strong> Almacenamiento de usuario y contraseña introducidos</li>
-                        <li><strong>Phishing en tiempo real:</strong> Adaptación dinámica a la interfaz de la aplicación legítima</li>
+                        <li><strong>Detección de aplicaciones objetivo:</strong> monitoriza apps bancarias instaladas.</li>
+                        <li><strong>Ventanas falsas:</strong> superposición de interfaces de login idénticas a las legítimas.</li>
+                        <li><strong>Captura de credenciales:</strong> almacenamiento de usuario y contraseña introducidos.</li>
+                        <li><strong>Phishing en tiempo real:</strong> adaptación dinámica a la interfaz de la aplicación legítima.</li>
                     </ul>
-
-                    <p><strong>Keylogging y captura de credenciales:</strong></p>
+                    <br/>
+                    <p><strong>Keylogging y captura de credenciales</strong></p>
                     <ul>
-                        <li><strong>Registro de pulsaciones:</strong> Captura todo lo escrito mediante el teclado</li>
-                        <li><strong>Captura de formularios:</strong> Extracción de datos de campos de entrada</li>
-                        <li><strong>Bypass de teclados virtuales:</strong> Capacidad de interceptar teclados de terceros</li>
-                        <li><strong>Almacenamiento local cifrado:</strong> Datos robados cifrados antes de exfiltración</li>
+                        <li><strong>Registro de pulsaciones:</strong> captura todo lo escrito mediante el teclado.</li>
+                        <li><strong>Captura de formularios:</strong> extracción de datos de campos de entrada.</li>
+                        <li><strong>Bypass de teclados virtuales:</strong> capacidad de interceptar teclados de terceros.</li>
+                        <li><strong>Almacenamiento local cifrado:</strong> datos robados cifrados antes de exfiltración.</li>
                     </ul>
-
-                    <p><strong>Interceptación de SMS (bypass de 2FA):</strong></p>
+                    <br/>
+                    <p><strong>Interceptación de SMS (bypass de 2FA)</strong></p>
                     <ul>
-                        <li><strong>Lectura de SMS:</strong> Acceso completo a mensajes entrantes</li>
-                        <li><strong>Extracción de códigos OTP:</strong> Captura automática de códigos de verificación</li>
-                        <li><strong>Ocultamiento de SMS:</strong> Eliminación de mensajes para evitar sospecha</li>
-                        <li><strong>Reenvío automático:</strong> Transmisión de códigos 2FA al servidor C&amp;C</li>
+                        <li><strong>Lectura de SMS:</strong> acceso completo a mensajes entrantes.</li>
+                        <li><strong>Extracción de códigos OTP:</strong> captura automática de códigos de verificación.</li>
+                        <li><strong>Ocultamiento de SMS:</strong> eliminación de mensajes para evitar sospecha.</li>
+                        <li><strong>Reenvío automático:</strong> transmisión de códigos 2FA al servidor C&amp;C.</li>
                     </ul>
-
-                    <p><strong>RAT (Remote Access Trojan):</strong></p>
+                    <br/>
+                    <p><strong>RAT (Remote Access Trojan)</strong></p>
                     <ul>
-                        <li><strong>Control remoto completo:</strong> Ejecución de comandos arbitrarios</li>
-                        <li><strong>Shell reverso:</strong> Acceso a terminal del sistema</li>
-                        <li><strong>Instalación de aplicaciones:</strong> Descarga e instalación de APKs adicionales</li>
-                        <li><strong>Modificación de configuración:</strong> Cambios en ajustes del dispositivo</li>
+                        <li><strong>Control remoto completo:</strong> ejecución de comandos arbitrarios.</li>
+                        <li><strong>Shell reverso:</strong> acceso a terminal del sistema.</li>
+                        <li><strong>Instalación de aplicaciones:</strong> descarga e instalación de APKs adicionales.</li>
+                        <li><strong>Modificación de configuración:</strong> cambios en ajustes del dispositivo.</li>
                     </ul>
-
-                    <p><strong>Captura de pantalla y grabación de audio:</strong></p>
+                    <br/>
+                    <p><strong>Captura de pantalla y grabación de audio</strong></p>
                     <ul>
-                        <li><strong>Screenshots automáticos:</strong> Capturas periódicas de la pantalla</li>
-                        <li><strong>Grabación de pantalla:</strong> Video de sesiones bancarias completas</li>
-                        <li><strong>Grabación de audio ambiente:</strong> Activación del micrófono para espionaje</li>
-                        <li><strong>Transmisión en tiempo real:</strong> Envío de capturas al servidor C&amp;C</li>
+                        <li><strong>Screenshots automáticos:</strong> capturas periódicas de la pantalla.</li>
+                        <li><strong>Grabación de pantalla:</strong> video de sesiones bancarias completas.</li>
+                        <li><strong>Grabación de audio ambiente:</strong> activación del micrófono para espionaje.</li>
+                        <li><strong>Transmisión en tiempo real:</strong> envío de capturas al servidor C&amp;C.</li>
                     </ul>
-
-                    <p><strong>Robo de información sensible:</strong></p>
+                    <br/>
+                    <p><strong>Robo de información sensible</strong></p>
                     <ul>
-                        <li><strong>Lista de contactos:</strong> Exportación completa de contactos del dispositivo</li>
-                        <li><strong>Historial de mensajes:</strong> Acceso a SMS, WhatsApp (si tiene permisos)</li>
-                        <li><strong>Credenciales almacenadas:</strong> Extracción de passwords guardados</li>
-                        <li><strong>Archivos del dispositivo:</strong> Acceso a documentos, fotos, descargas</li>
-                        <li><strong>Información del dispositivo:</strong> IMEI, número telefónico, modelo, operador</li>
+                        <li><strong>Lista de contactos:</strong> exportación completa de contactos del dispositivo.</li>
+                        <li><strong>Historial de mensajes:</strong> acceso a SMS, WhatsApp (si tiene permisos).</li>
+                        <li><strong>Credenciales almacenadas:</strong> extracción de passwords guardados.</li>
+                        <li><strong>Archivos del dispositivo:</strong> acceso a documentos, fotos, descargas.</li>
+                        <li><strong>Información del dispositivo:</strong> IMEI, número telefónico, modelo, operador.</li>
                     </ul>
                 </div>
 
                 <div class="variation-card">
                     <h3>Mecanismo de funcionamiento</h3>
-                    <p>El ciclo de ataque de Copybara sigue un flujo estructurado desde la infección inicial hasta la exfiltración de credenciales:</p>
-                    
+
+                    <p>
+                        El funcionamiento de Copybara puede describirse como un proceso dividido en varias fases
+                        claramente diferenciadas, que abarcan desde la distribución inicial del malware hasta la
+                        exfiltración de la información obtenida.
+                    </p>
+
                     <p><strong>Fase 1: Distribución e instalación</strong></p>
-                    <ul>
-                        <li><strong>Distribución mediante aplicaciones falsas:</strong> Apps de utilidades, juegos o herramientas troyanizadas</li>
-                        <li><strong>Tiendas no oficiales:</strong> Repositorios APK alternativos y sitios de descarga directa</li>
-                        <li><strong>Campañas de phishing:</strong> Mensajes SMS y correos con enlaces a descargas</li>
-                        <li><strong>Nombres engañosos:</strong> "Actualización de seguridad", "Flash Player", "Reproductor de video"</li>
-                    </ul>
+                    <p>
+                        Copybara se distribuye principalmente mediante aplicaciones falsas que simulan ser utilidades,
+                        juegos o herramientas comunes. Estas aplicaciones suelen encontrarse en tiendas no oficiales,
+                        repositorios APK alternativos o enlaces directos enviados a través de campañas de phishing.
+                        Para aumentar la tasa de instalación, el malware utiliza nombres y descripciones engañosas,
+                        presentándose como supuestas actualizaciones de seguridad o reproductores multimedia.
+                    </p>
 
-                    <p><strong>Fase 2: Solicitud de permisos de accesibilidad</strong></p>
-                    <ul>
-                        <li><strong>Permisos críticos:</strong> Accesibilidad (AccessibilityService) como vector principal</li>
-                        <li><strong>Ingeniería social:</strong> Mensajes falsos de "optimización" o "limpieza"</li>
-                        <li><strong>Persistencia mediante accesibilidad:</strong> Previene desinstalación una vez otorgado</li>
-                        <li><strong>Permisos adicionales:</strong> SMS, contactos, almacenamiento, micrófono, cámara</li>
-                    </ul>
+                    <p><strong>Fase 2: Abuso de permisos de accesibilidad</strong></p>
+                    <p>
+                        Una vez instalada la aplicación, el malware induce al usuario a conceder permisos de accesibilidad,
+                        que constituyen el eje central del ataque. Mediante mensajes falsos relacionados con la optimización
+                        o limpieza del sistema, Copybara persuade a la víctima para activar estos permisos, lo que le permite
+                        observar la interacción del usuario con el dispositivo y dificultar su posterior desinstalación.
+                        En muchos casos, también se solicitan permisos adicionales para ampliar la capacidad de recopilación
+                        de datos.
+                    </p>
 
-                    <p><strong>Fase 3: Detección de aplicaciones bancarias</strong></p>
-                    <ul>
-                        <li><strong>Enumeración de apps instaladas:</strong> Listado completo de aplicaciones del dispositivo</li>
-                        <li><strong>Matching contra lista objetivo:</strong> Comparación con base de datos de apps bancarias</li>
-                        <li><strong>Descarga de overlays específicos:</strong> Obtención de pantallas falsas personalizadas</li>
-                        <li><strong>Monitorización continua:</strong> Detección de nuevas instalaciones de apps objetivo</li>
-                    </ul>
+                    <p><strong>Fase 3: Identificación de aplicaciones bancarias</strong></p>
+                    <p>
+                        Con los permisos necesarios concedidos, Copybara analiza de forma continua las aplicaciones
+                        instaladas en el dispositivo. Esta información se compara con una base de datos interna de
+                        aplicaciones bancarias y de servicios financieros. Cuando se detecta una coincidencia, el malware
+                        descarga desde la infraestructura de control las interfaces falsas específicas para la aplicación
+                        objetivo y mantiene una vigilancia constante ante nuevas instalaciones.
+                    </p>
 
-                    <p><strong>Fase 4: Superposición de interfaces falsas (overlay)</strong></p>
-                    <ul>
-                        <li><strong>Detección de lanzamiento:</strong> Identificación cuando usuario abre app bancaria</li>
-                        <li><strong>Ventana superpuesta:</strong> Presentación de interfaz falsa idéntica a la legítima</li>
-                        <li><strong>Captura de credenciales:</strong> Usuario introduce datos creyendo usar app real</li>
-                        <li><strong>Simulación de error:</strong> Mensaje de "error temporal" para justificar fallo de login</li>
-                        <li><strong>Redirección a app real:</strong> Cierre del overlay mostrando app legítima</li>
-                    </ul>
+                    <p><strong>Fase 4: Superposición de interfaces falsas</strong></p>
+                    <p>
+                        Al detectar que el usuario abre una aplicación bancaria legítima, el malware activa una interfaz
+                        superpuesta que imita visualmente a la original. El usuario introduce sus credenciales creyendo
+                        interactuar con la aplicación real. Tras capturar la información, Copybara muestra un mensaje de
+                        error genérico y cierra la superposición, redirigiendo a la aplicación legítima para minimizar
+                        sospechas inmediatas.
+                    </p>
 
-                    <p><strong>Fase 5: Exfiltración de datos</strong></p>
-                    <ul>
-                        <li><strong>Cifrado de credenciales:</strong> Protección de datos robados antes de transmisión</li>
-                        <li><strong>Conexión al servidor C&amp;C:</strong> Establecimiento de canal seguro</li>
-                        <li><strong>Transmisión de datos:</strong> Envío de credenciales, SMS, contactos, screenshots</li>
-                        <li><strong>Confirmación de recepción:</strong> Verificación de entrega exitosa</li>
-                        <li><strong>Eliminación de evidencias:</strong> Borrado de logs y archivos temporales</li>
-                    </ul>
+                    <p><strong>Fase 5: Exfiltración de información</strong></p>
+                    <p>
+                        Las credenciales obtenidas, junto con otra información recolectada durante la ejecución del
+                        malware, se cifran y se transmiten a la infraestructura de mando y control del atacante mediante
+                        canales protegidos. Tras confirmar la transmisión, el malware puede eliminar rastros locales con
+                        el objetivo de reducir la probabilidad de detección.
+                    </p>
                 </div>
+
 
                 <div class="variation-card">
                     <h3>Técnicas de persistencia</h3>
                     <p>Copybara implementa múltiples mecanismos para mantener presencia en el dispositivo comprometido:</p>
                     <ul>
-                        <li><strong>Servicios en segundo plano:</strong> Ejecución continua mediante Services y WorkManager</li>
-                        <li><strong>Receivers de eventos:</strong> Activación ante eventos del sistema (boot, conectividad, carga)</li>
-                        <li><strong>Resistencia a eliminación:</strong> Bloqueo de desinstalación mediante permisos de administrador</li>
-                        <li><strong>Auto-reinstalación:</strong> Reactivación desde componente oculto si detecta eliminación</li>
-                        <li><strong>Ocultación en configuración:</strong> Nombre genérico en lista de aplicaciones</li>
-                        <li><strong>Vigilancia de seguridad:</strong> Detección y desactivación de antivirus móviles</li>
+                        <li><strong>Servicios en segundo plano:</strong> ejecución continua mediante Services y WorkManager.</li>
+                        <li><strong>Receivers de eventos:</strong> activación ante eventos del sistema (boot, conectividad, carga).</li>
+                        <li><strong>Resistencia a eliminación:</strong> bloqueo de desinstalación mediante permisos de administrador.</li>
+                        <li><strong>Auto-reinstalación:</strong> reactivación desde componente oculto si detecta eliminación.</li>
+                        <li><strong>Ocultación en configuración:</strong> nombre genérico en lista de aplicaciones.</li>
+                        <li><strong>Vigilancia de seguridad:</strong> detección y desactivación de antivirus móviles.</li>
                     </ul>
                 </div>
 
@@ -631,148 +635,34 @@
                     <h3>Evasión de detección</h3>
                     <p>El malware utiliza técnicas sofisticadas para evitar ser detectado por soluciones de seguridad:</p>
                     
-                    <p><strong>Ofuscación de código:</strong></p>
+                    <p><strong>Ofuscación de código</strong></p>
                     <ul>
-                        <li><strong>Renombrado de clases y métodos:</strong> Nomenclatura sin sentido (a, b, c, aa, ab...)</li>
-                        <li><strong>Cifrado de strings:</strong> Cadenas críticas descifradas en tiempo de ejecución</li>
-                        <li><strong>Control flow obfuscation:</strong> Lógica de programa difícil de seguir</li>
-                        <li><strong>Packing dinámico:</strong> Código principal cargado en memoria desde payload cifrado</li>
+                        <li><strong>Renombrado de clases y métodos:</strong> nomenclatura sin sentido (a, b, c, aa, ab...)</li>
+                        <li><strong>Cifrado de strings:</strong> cadenas críticas descifradas en tiempo de ejecución</li>
+                        <li><strong>Control flow obfuscation:</strong> lógica de programa difícil de seguir</li>
+                        <li><strong>Packing dinámico:</strong> código principal cargado en memoria desde payload cifrado</li>
                     </ul>
-
-                    <p><strong>Detección de entornos de análisis:</strong></p>
+                    <br/>
+                    <p><strong>Detección de entornos de análisis</strong></p>
                     <ul>
-                        <li><strong>Emulator detection:</strong> Identificación de emuladores de Android (Genymotion, BlueStacks)</li>
-                        <li><strong>Virtual machine detection:</strong> Detección de ejecución en VM</li>
-                        <li><strong>Sandbox evasion:</strong> Comportamiento benigno cuando detecta análisis automatizado</li>
-                        <li><strong>Delayed activation:</strong> Activación maliciosa después de período de inactividad</li>
+                        <li><strong>Emulator detection:</strong> identificación de emuladores de Android (Genymotion, BlueStacks)</li>
+                        <li><strong>Virtual machine detection:</strong> detección de ejecución en VM</li>
+                        <li><strong>Sandbox evasion:</strong> comportamiento benigno cuando detecta análisis automatizado</li>
+                        <li><strong>Delayed activation:</strong> activación maliciosa después de período de inactividad</li>
                     </ul>
-
-                    <p><strong>Anti-análisis dinámico:</strong></p>
+                    <br/>
+                    <p><strong>Anti-análisis dinámico</strong></p>
                     <ul>
-                        <li><strong>Debugger detection:</strong> Verificación de presencia de debugger</li>
-                        <li><strong>Root detection:</strong> Comprobación de dispositivo rooteado</li>
-                        <li><strong>Integrity checking:</strong> Validación de integridad del APK</li>
-                        <li><strong>Behavior randomization:</strong> Variación de patrones de ejecución</li>
-                    </ul>
-                </div>
-
-                <div class="variation-card">
-                    <h3>Objetivos y aplicaciones afectadas</h3>
-                    <p>Copybara tiene como objetivo principal instituciones financieras en mercados específicos:</p>
-                    
-                    <p><strong>Aplicaciones bancarias españolas:</strong></p>
-                    <ul>
-                        <li>BBVA, Santander, CaixaBank, Bankia, Sabadell</li>
-                        <li>ING, Openbank, EVO Banco</li>
-                        <li>Cajas de ahorro regionales</li>
-                    </ul>
-
-                    <p><strong>Aplicaciones bancarias latinoamericanas:</strong></p>
-                    <ul>
-                        <li>Bancos principales de México, Colombia, Argentina, Chile</li>
-                        <li>Apps de bancos regionales y cooperativas de crédito</li>
-                    </ul>
-
-                    <p><strong>Aplicaciones de criptomonedas:</strong></p>
-                    <ul>
-                        <li>Binance, Coinbase, Crypto.com</li>
-                        <li>Wallets de criptomonedas populares</li>
-                    </ul>
-
-                    <p><strong>Servicios de pago:</strong></p>
-                    <ul>
-                        <li>PayPal, Bizum, Google Pay</li>
-                        <li>Apps de transferencias P2P</li>
-                    </ul>
-                </div>
-
-                <div class="variation-card">
-                    <h3>Medidas de mitigación</h3>
-                    <p>Estrategias específicas para prevenir y detectar infecciones por Copybara:</p>
-                    
-                    <p><strong>Detección de overlay attacks:</strong></p>
-                    <ul>
-                        <li><strong>Sistema operativo:</strong> Android 10+ incluye protecciones contra overlays maliciosos</li>
-                        <li><strong>Apps bancarias:</strong> Detección de pantallas superpuestas mediante APIs de Android</li>
-                        <li><strong>Security patches:</strong> Actualizaciones que cierran vectores de overlay</li>
-                    </ul>
-
-                    <p><strong>Auditoría de permisos de accesibilidad:</strong></p>
-                    <ul>
-                        <li><strong>Revisión periódica:</strong> Verificar apps con permisos de accesibilidad activos</li>
-                        <li><strong>Principio de mínimo privilegio:</strong> Cuestionar necesidad real de este permiso</li>
-                        <li><strong>Revocación inmediata:</strong> Eliminar permisos de apps sospechosas</li>
-                    </ul>
-
-                    <p><strong>Soluciones de seguridad móvil:</strong></p>
-                    <ul>
-                        <li><strong>Antimalware actualizado:</strong> ESET, Bitdefender, Kaspersky Mobile Security</li>
-                        <li><strong>Detección comportamental:</strong> Análisis de patrones de actividad anormales</li>
-                        <li><strong>Google Play Protect:</strong> Mantener activado en dispositivos Android</li>
-                    </ul>
-                </div>
-
-                <div class="variation-card">
-                    <h3>Comparación con SuperCard X</h3>
-                    <p>Diferencias clave entre ambas amenazas de malware bancario:</p>
-                    
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
-                        <thead>
-                            <tr style="background-color: #f8f9fa;">
-                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Característica</th>
-                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">SuperCard X</th>
-                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Copybara</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Vector de ataque principal</strong></td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Relay attack NFC</td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Overlay attack</td>
-                            </tr>
-                            <tr style="background-color: #f8f9fa;">
-                                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Objetivo</strong></td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Pagos NFC contactless</td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Credenciales bancarias</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Requiere participación activa</strong></td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">No (relay automático)</td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Sí (usuario introduce datos)</td>
-                            </tr>
-                            <tr style="background-color: #f8f9fa;">
-                                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Interceptación 2FA</strong></td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Limitada</td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Completa (SMS)</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Complejidad técnica</strong></td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Alta (infraestructura relay)</td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Media (overlay + keylogging)</td>
-                            </tr>
-                            <tr style="background-color: #f8f9fa;">
-                                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Detección por usuario</strong></td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Muy difícil</td>
-                                <td style="padding: 12px; border: 1px solid #ddd;">Difícil (overlays realistas)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="variation-card">
-                    <h3>Recursos adicionales</h3>
-                    <p>Para más información sobre Copybara y su funcionamiento:</p>
-                    <ul>
-                        <li><strong>Análisis de Verimatrix:</strong> <a href="https://www.verimatrix.com/es/ciberseguridad/ideas-de-ciberseguridad/copybara-android-banking-trojan-alert/" target="_blank">Copybara Android Banking Trojan Alert</a></li>
-                        <li><strong>Guía de eliminación:</strong> <a href="https://www.pcrisk.es/guias-de-desinfeccion/12972-copybara-malware-android" target="_blank">Cómo eliminar Copybara de Android</a></li>
-                        <li><strong>Capturas de pantallas falsas:</strong> Ejemplos visuales disponibles en los recursos mencionados</li>
-                        <li><strong>Análisis técnico de overlays:</strong> Diagramas de flujo del ataque documentados</li>
+                        <li><strong>Debugger detection:</strong> verificación de presencia de debugger</li>
+                        <li><strong>Root detection:</strong> comprobación de dispositivo rooteado</li>
+                        <li><strong>Integrity checking:</strong> validación de integridad del APK</li>
+                        <li><strong>Behavior randomization:</strong> variación de patrones de ejecución</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Protección (componente de pestañas verticales) -->
+        <!-- Medidas de protección -->
         <section id="proteccion" class="content-section alt-bg">
             <div class="container">
                 <h2>Cómo protegerse</h2>
@@ -832,13 +722,13 @@
                             <li>
                                 <button class="tab-button" role="tab" aria-selected="false" data-target="tab-monitoring" id="tab-monitoring-btn">
                                     <span class="tab-icon">📊</span>
-                                    <span>Monitoreo de actividad de cuenta</span>
+                                    <span>Monitorización de actividad de la cuenta</span>
                                 </button>
                             </li>
                             <li>
                                 <button class="tab-button" role="tab" aria-selected="false" data-target="tab-public-wifi" id="tab-public-wifi-btn">
                                     <span class="tab-icon">🚫</span>
-                                    <span>Evitar WiFi públicas para banca</span>
+                                    <span>Evitar WiFi públicas para operaciones bancarias</span>
                                 </button>
                             </li>
                         </ul>
@@ -854,22 +744,22 @@
                             <ul>
                                 <li><strong>Android Security Patches:</strong> Google publica actualizaciones mensuales que corrigen vulnerabilidades críticas en el sistema operativo. Estas actualizaciones cierran brechas que el malware podría explotar.</li>
                                 <li><strong>iOS Security Updates:</strong> Apple distribuye parches de seguridad que protegen contra amenazas emergentes y vulnerabilidades de día cero.</li>
-                                <li><strong>Corrección de vulnerabilidades NFC:</strong> Actualizaciones específicas que mejoran la seguridad de comunicaciones contactless.</li>
+                                <li><strong>Corrección de vulnerabilidades NFC:</strong> actualizaciones específicas que mejoran la seguridad de comunicaciones contactless.</li>
                             </ul>
 
                             <h4>Actualizaciones de aplicaciones de pago:</h4>
                             <ul>
-                                <li><strong>Google Pay / Apple Pay:</strong> Actualizaciones frecuentes incluyen mejoras en detección de fraude y protecciones contra relay attacks</li>
-                                <li><strong>Apps bancarias:</strong> Incorporan detección de overlays, validación de entorno, y anti-tampering</li>
-                                <li><strong>Actualizaciones automáticas:</strong> Configurar apps críticas para actualización automática desde Google Play Store / App Store</li>
+                                <li><strong>Google Pay / Apple Pay:</strong> actualizaciones frecuentes incluyen mejoras en detección de fraude y protecciones contra relay attacks.</li>
+                                <li><strong>Apps bancarias:</strong> incorporan detección de overlays, validación de entorno, y anti-tampering.</li>
+                                <li><strong>Actualizaciones automáticas:</strong> configurar apps críticas para actualización automática desde Google Play Store / App Store.</li>
                             </ul>
 
                             <h4>Protecciones añadidas en versiones recientes:</h4>
                             <ul>
-                                <li><strong>Android 10+:</strong> Protecciones contra overlay attacks, restricciones de accesibilidad</li>
-                                <li><strong>Android 11+:</strong> Permisos de un solo uso, mejoras en gestión de permisos sensibles</li>
-                                <li><strong>Android 13+:</strong> Notificaciones obligatorias para acceso a portapapeles, mayor control de permisos</li>
-                                <li><strong>iOS 15+:</strong> App Privacy Report, protecciones mejoradas de Face ID/Touch ID para Apple Pay</li>
+                                <li><strong>Android 10+:</strong> protecciones contra overlay attacks, restricciones de accesibilidad.</li>
+                                <li><strong>Android 11+:</strong> permisos de un solo uso, mejoras en gestión de permisos sensibles.</li>
+                                <li><strong>Android 13+:</strong> notificaciones obligatorias para acceso a portapapeles, mayor control de permisos.</li>
+                                <li><strong>iOS 15+:</strong> App Privacy Report, protecciones mejoradas de Face ID/Touch ID para Apple Pay.</li>
                             </ul>
                         </div>
 
@@ -877,34 +767,34 @@
                             <h3>Descargar solo desde fuentes oficiales</h3>
                             <p>La mayoría de infecciones por malware bancario provienen de aplicaciones descargadas fuera de tiendas oficiales.</p>
 
-                            <h4>Peligros de APKs de terceros:</h4>
+                            <h4>Peligros de APKs de terceros</h4>
                             <ul>
-                                <li><strong>Aplicaciones troyanizadas:</strong> Apps legítimas modificadas para incluir código malicioso (ej: Copybara empaquetado en apps populares)</li>
-                                <li><strong>Ausencia de verificación:</strong> Sitios de terceros no validan la seguridad de las aplicaciones que distribuyen</li>
-                                <li><strong>Actualizaciones maliciosas:</strong> Versiones "actualizadas" que en realidad son malware</li>
-                                <li><strong>Certificados falsos:</strong> Firmado con certificados comprometidos o auto-firmados</li>
+                                <li><strong>Aplicaciones troyanizadas:</strong> apps legítimas modificadas para incluir código malicioso (ej: Copybara empaquetado en apps populares).</li>
+                                <li><strong>Ausencia de verificación:</strong> sitios de terceros no validan la seguridad de las aplicaciones que distribuyen.</li>
+                                <li><strong>Actualizaciones maliciosas:</strong> versiones "actualizadas" que en realidad son malware.</li>
+                                <li><strong>Certificados falsos:</strong> firmado con certificados comprometidos o auto-firmados.</li>
                             </ul>
 
-                            <h4>Google Play Protect y Apple App Store:</h4>
+                            <h4>Google Play Protect y Apple App Store</h4>
                             <ul>
-                                <li><strong>Google Play Protect:</strong> Escaneo automático de apps antes y después de instalación, detección de comportamientos sospechosos</li>
-                                <li><strong>App Store Review:</strong> Apple revisa manualmente todas las aplicaciones antes de publicación</li>
-                                <li><strong>Actualizaciones de definiciones:</strong> Bases de datos de malware actualizadas constantemente</li>
-                                <li><strong>Análisis estático y dinámico:</strong> Detección de código malicioso mediante múltiples técnicas</li>
+                                <li><strong>Google Play Protect:</strong> Escaneo automático de apps antes y después de instalación, detección de comportamientos sospechosos.</li>
+                                <li><strong>App Store Review:</strong> Apple revisa manualmente todas las aplicaciones antes de publicación.</li>
+                                <li><strong>Actualizaciones de definiciones:</strong> bases de datos de malware actualizadas constantemente.</li>
+                                <li><strong>Análisis estático y dinámico:</strong> detección de código malicioso mediante múltiples técnicas.</li>
                             </ul>
 
-                            <h4>Verificación de desarrolladores:</h4>
+                            <h4>Verificación de desarrolladores</h4>
                             <ul>
-                                <li><strong>Verificar identidad del desarrollador:</strong> Confirmar que la app bancaria proviene del banco oficial</li>
-                                <li><strong>Revisar número de instalaciones:</strong> Apps legítimas tienen millones de descargas</li>
-                                <li><strong>Leer reseñas recientes:</strong> Comentarios de usuarios pueden revelar comportamiento sospechoso</li>
-                                <li><strong>Comparar permisos solicitados:</strong> Desconfiar si pide permisos innecesarios (ej: una linterna que pide acceso a SMS)</li>
+                                <li><strong>Verificar identidad del desarrollador:</strong> confirmar que la app bancaria proviene del banco oficial.</li>
+                                <li><strong>Revisar número de instalaciones:</strong> apps legítimas tienen millones de descargas.</li>
+                                <li><strong>Leer reseñas recientes:</strong> comentarios de usuarios pueden revelar comportamiento sospechoso.</li>
+                                <li><strong>Comparar permisos solicitados:</strong> desconfiar si pide permisos innecesarios (ej: una linterna que pide acceso a SMS).</li>
                             </ul>
 
-                            <h4>Configuración recomendada:</h4>
+                            <h4>Configuración recomendada</h4>
                             <ul>
-                                <li><strong>Deshabilitar "Fuentes desconocidas":</strong> En Android, mantener desactivada la instalación de apps de fuentes no confiables</li>
-                                <li><strong>Verificar firma digital:</strong> Utilizar herramientas como apksigner para validar certificados</li>
+                                <li><strong>Deshabilitar "Fuentes desconocidas":</strong> en Android, mantener desactivada la instalación de apps de fuentes no confiables.</li>
+                                <li><strong>Verificar firma digital:</strong> utilizar herramientas como apksigner para validar certificados.</li>
                             </ul>
                         </div>
 
@@ -912,38 +802,38 @@
                             <h3>Revisar permisos de aplicaciones</h3>
                             <p>Los permisos son el mecanismo principal que utiliza el malware para ejecutar actividades maliciosas.</p>
 
-                            <h4>Permisos de accesibilidad sospechosos:</h4>
+                            <h4>Permisos de accesibilidad sospechosos</h4>
                             <ul>
-                                <li><strong>AccessibilityService:</strong> Permiso más peligroso, permite leer pantalla y simular toques. Copybara lo requiere para overlay attacks</li>
-                                <li><strong>Cuándo es legítimo:</strong> Apps de lectura de pantalla, automatización para discapacidades</li>
-                                <li><strong>Cuándo es sospechoso:</strong> Juegos, linternas, utilidades simples que lo solicitan</li>
-                                <li><strong>Revisión en Android:</strong> Configuración → Accesibilidad → Servicios instalados</li>
+                                <li><strong>AccessibilityService:</strong> permiso más peligroso, permite leer pantalla y simular toques. Copybara lo requiere para overlay attacks.</li>
+                                <li><strong>Cuándo es legítimo:</strong> apps de lectura de pantalla, automatización para discapacidades.</li>
+                                <li><strong>Cuándo es sospechoso:</strong> juegos, linternas, utilidades simples que lo solicitan.</li>
+                                <li><strong>Revisión en Android:</strong> Configuración → Accesibilidad → Servicios instalados.</li>
                             </ul>
 
-                            <h4>Permisos NFC innecesarios:</h4>
+                            <h4>Permisos NFC innecesarios</h4>
                             <ul>
-                                <li><strong>android.permission.NFC:</strong> Acceso a hardware NFC del dispositivo</li>
-                                <li><strong>Legítimo en:</strong> Apps de pago (Google Pay), apps de transporte, lectores de tarjetas</li>
-                                <li><strong>Sospechoso en:</strong> Aplicaciones sin funcionalidad de pago o comunicación NFC aparente</li>
-                                <li><strong>SuperCard X requiere:</strong> Este permiso para interceptar comunicaciones NFC</li>
+                                <li><strong>android.permission.NFC:</strong> acceso a hardware NFC del dispositivo.</li>
+                                <li><strong>Legítimo en:</strong> apps de pago (Google Pay), apps de transporte, lectores de tarjetas.</li>
+                                <li><strong>Sospechoso en:</strong> aplicaciones sin funcionalidad de pago o comunicación NFC aparente.</li>
+                                <li><strong>SuperCard X requiere:</strong> este permiso para interceptar comunicaciones NFC.</li>
                             </ul>
 
-                            <h4>Otros permisos críticos a revisar:</h4>
+                            <h4>Otros permisos críticos a revisar</h4>
                             <ul>
-                                <li><strong>READ_SMS / RECEIVE_SMS:</strong> Copybara lo usa para interceptar códigos 2FA</li>
-                                <li><strong>RECORD_AUDIO:</strong> Grabación de conversaciones y audio ambiente</li>
-                                <li><strong>READ_CONTACTS:</strong> Acceso a lista de contactos para spam y phishing dirigido</li>
-                                <li><strong>SYSTEM_ALERT_WINDOW:</strong> Mostrar ventanas sobre otras apps (overlays)</li>
-                                <li><strong>BIND_DEVICE_ADMIN:</strong> Administrador de dispositivo, dificulta desinstalación</li>
-                                <li><strong>REQUEST_INSTALL_PACKAGES:</strong> Instalación de apps adicionales sin interacción</li>
+                                <li><strong>READ_SMS / RECEIVE_SMS:</strong> Copybara lo usa para interceptar códigos 2FA.</li>
+                                <li><strong>RECORD_AUDIO:</strong> grabación de conversaciones y audio ambiente.</li>
+                                <li><strong>READ_CONTACTS:</strong> acceso a lista de contactos para spam y phishing dirigido.</li>
+                                <li><strong>SYSTEM_ALERT_WINDOW:</strong> mostrar ventanas sobre otras apps (overlays).</li>
+                                <li><strong>BIND_DEVICE_ADMIN:</strong> administrador de dispositivo, dificulta desinstalación.</li>
+                                <li><strong>REQUEST_INSTALL_PACKAGES:</strong> instalación de apps adicionales sin interacción.</li>
                             </ul>
 
-                            <h4>Auditoría regular de permisos concedidos:</h4>
+                            <h4>Auditoría regular de permisos concedidos</h4>
                             <ul>
-                                <li><strong>Revisión mensual:</strong> Verificar qué apps tienen permisos sensibles</li>
-                                <li><strong>Principio de mínimo privilegio:</strong> Revocar permisos no esenciales</li>
-                                <li><strong>Permisos de un solo uso:</strong> En Android 11+, usar opción "Solo esta vez" para permisos temporales</li>
-                                <li><strong>Herramientas de auditoría:</strong> Apps como "Permission Manager" para visualización detallada</li>
+                                <li><strong>Revisión mensual:</strong> verificar qué apps tienen permisos sensibles.</li>
+                                <li><strong>Principio de mínimo privilegio:</strong> revocar permisos no esenciales.</li>
+                                <li><strong>Permisos de un solo uso:</strong> en Android 11+, usar opción "Solo esta vez" para permisos temporales.</li>
+                                <li><strong>Herramientas de auditoría:</strong> apps como "Permission Manager" para visualización detallada.</li>
                             </ul>
                         </div>
 
@@ -951,32 +841,32 @@
                             <h3>Deshabilitar NFC cuando no se use</h3>
                             <p>Mantener NFC desactivado cuando no es necesario reduce significativamente la superficie de ataque.</p>
 
-                            <h4>Reducción de superficie de ataque:</h4>
+                            <h4>Reducción de superficie de ataque</h4>
                             <ul>
-                                <li><strong>Prevención de relay attacks:</strong> Si NFC está desactivado, SuperCard X no puede interceptar comunicaciones</li>
-                                <li><strong>Protección contra skimming:</strong> Evita lectura no autorizada de tarjetas contactless en lugares concurridos</li>
-                                <li><strong>Sin necesidad constante:</strong> La mayoría de usuarios solo usan NFC ocasionalmente para pagos</li>
+                                <li><strong>Prevención de relay attacks:</strong> si NFC está desactivado, SuperCard X no puede interceptar comunicaciones.</li>
+                                <li><strong>Protección contra skimming:</strong> evita lectura no autorizada de tarjetas contactless en lugares concurridos.</li>
+                                <li><strong>Sin necesidad constante:</strong> la mayoría de usuarios solo usan NFC ocasionalmente para pagos.</li>
                             </ul>
 
-                            <h4>Configuración rápida en Android:</h4>
+                            <h4>Configuración rápida en Android</h4>
                             <ul>
-                                <li><strong>Panel de acceso rápido:</strong> Deslizar desde arriba, tocar icono NFC para activar/desactivar</li>
-                                <li><strong>Configuración → Conexiones → NFC y pagos:</strong> Desactivar "NFC" cuando no se necesite</li>
-                                <li><strong>Tasker / Automatización:</strong> Automatizar activación solo al abrir apps de pago</li>
+                                <li><strong>Panel de acceso rápido:</strong> deslizar desde arriba, tocar icono NFC para activar/desactivar.</li>
+                                <li><strong>Configuración → Conexiones → NFC y pagos:</strong> desactivar "NFC" cuando no se necesite.</li>
+                                <li><strong>Tasker / Automatización:</strong> automatizar activación solo al abrir apps de pago.</li>
                             </ul>
 
-                            <h4>Configuración en iOS:</h4>
+                            <h4>Configuración en iOS</h4>
                             <ul>
-                                <li><strong>NFC siempre activo:</strong> En iOS no se puede desactivar completamente NFC</li>
-                                <li><strong>Lectura automática de etiquetas:</strong> Configuración → NFC → Desactivar "Lectura de etiquetas NFC"</li>
-                                <li><strong>Protección inherente:</strong> iOS requiere autenticación (Face ID/Touch ID) para pagos, añadiendo capa de seguridad</li>
+                                <li><strong>NFC siempre activo:</strong> en iOS no se puede desactivar completamente NFC.</li>
+                                <li><strong>Lectura automática de etiquetas:</strong> Configuración → NFC → Desactivar "Lectura de etiquetas NFC".</li>
+                                <li><strong>Protección inherente:</strong> iOS requiere autenticación (Face ID/Touch ID) para pagos, añadiendo capa de seguridad.</li>
                             </ul>
 
-                            <h4>Balance entre conveniencia y seguridad:</h4>
+                            <h4>Balance entre conveniencia y seguridad</h4>
                             <ul>
-                                <li><strong>Usuarios frecuentes:</strong> Si pagas con NFC diariamente, beneficio de seguridad puede no justificar inconveniencia</li>
-                                <li><strong>Usuarios ocasionales:</strong> Desactivar NFC y activarlo solo cuando se necesite es altamente recomendable</li>
-                                <li><strong>Alternativa:</strong> Usar tarjetas físicas con chip para mayor seguridad en transacciones importantes</li>
+                                <li><strong>Usuarios frecuentes:</strong> si pagas con NFC diariamente, beneficio de seguridad puede no justificar inconveniencia.</li>
+                                <li><strong>Usuarios ocasionales:</strong> desactivar NFC y activarlo solo cuando se necesite es altamente recomendable.</li>
+                                <li><strong>Alternativa:</strong> usar tarjetas físicas con chip para mayor seguridad en transacciones importantes.</li>
                             </ul>
                         </div>
 
@@ -984,35 +874,35 @@
                             <h3>Utilizar límites de transacción</h3>
                             <p>Configurar límites de monto y frecuencia en pagos contactless limita el daño potencial de un ataque exitoso.</p>
 
-                            <h4>Configuración de montos máximos:</h4>
+                            <h4>Configuración de montos máximos</h4>
                             <ul>
-                                <li><strong>Límites por transacción:</strong> Configurar en app bancaria un monto máximo por pago NFC (ej: 50€)</li>
-                                <li><strong>Límites diarios:</strong> Establecer tope de gasto diario para pagos contactless</li>
-                                <li><strong>Requerimiento de PIN:</strong> Configurar que transacciones superiores a cierto monto requieran PIN o biometría</li>
-                                <li><strong>Apps de pago móvil:</strong> Google Pay y Apple Pay permiten configuración de límites adicionales</li>
+                                <li><strong>Límites por transacción:</strong> configurar en app bancaria un monto máximo por pago NFC (ej: 50€).</li>
+                                <li><strong>Límites diarios:</strong> establecer tope de gasto diario para pagos contactless.</li>
+                                <li><strong>Requerimiento de PIN:</strong> configurar que transacciones superiores a cierto monto requieran PIN o biometría.</li>
+                                <li><strong>Apps de pago móvil:</strong> Google Pay y Apple Pay permiten configuración de límites adicionales.</li>
                             </ul>
 
-                            <h4>Notificaciones en tiempo real:</h4>
+                            <h4>Notificaciones en tiempo real</h4>
                             <ul>
-                                <li><strong>Push notifications:</strong> Activar notificaciones inmediatas para cada transacción</li>
-                                <li><strong>SMS banking:</strong> Recibir SMS por cada cargo en tarjeta</li>
-                                <li><strong>Email alerts:</strong> Configurar alertas por correo para transacciones sospechosas</li>
-                                <li><strong>Detección temprana:</strong> Permite identificar fraude en minutos y bloquear tarjeta inmediatamente</li>
+                                <li><strong>Push notifications:</strong> activar notificaciones inmediatas para cada transacción.</li>
+                                <li><strong>SMS banking:</strong> recibir SMS por cada cargo en tarjeta.</li>
+                                <li><strong>Email alerts:</strong> configurar alertas por correo para transacciones sospechosas.</li>
+                                <li><strong>Detección temprana:</strong> permite identificar fraude en minutos y bloquear tarjeta inmediatamente.</li>
                             </ul>
 
-                            <h4>Tarjetas virtuales de un solo uso:</h4>
+                            <h4>Tarjetas virtuales de un solo uso</h4>
                             <ul>
-                                <li><strong>Números virtuales:</strong> Servicios como Revolut, N26 permiten generar tarjetas temporales</li>
-                                <li><strong>Límite de uso:</strong> Tarjetas válidas para una sola transacción o período limitado</li>
-                                <li><strong>Monto específico:</strong> Cargar solo el monto exacto necesario para compra</li>
-                                <li><strong>Sin exposición de tarjeta real:</strong> FPAN nunca se transmite, solo DPAN temporal</li>
+                                <li><strong>Números virtuales:</strong> servicios como Revolut o N26 permiten generar tarjetas temporales.</li>
+                                <li><strong>Límite de uso:</strong> tarjetas válidas para una sola transacción o período limitado.</li>
+                                <li><strong>Monto específico:</strong> cargar solo el monto exacto necesario para compra.</li>
+                                <li><strong>Sin exposición de tarjeta real:</strong> FPAN nunca se transmite, solo DPAN temporal.</li>
                             </ul>
 
-                            <h4>Ventajas de limitación de riesgo:</h4>
+                            <h4>Ventajas de limitación de riesgo</h4>
                             <ul>
-                                <li><strong>Daño limitado:</strong> Incluso si atacante obtiene acceso, pérdidas están acotadas</li>
-                                <li><strong>Fraude detectable:</strong> Múltiples transacciones pequeñas levantan alertas de comportamiento anómalo</li>
-                                <li><strong>Reversibilidad:</strong> Transacciones de menor monto son más fáciles de disputar y recuperar</li>
+                                <li><strong>Daño limitado:</strong> incluso si atacante obtiene acceso, las pérdidas están acotadas.</li>
+                                <li><strong>Fraude detectable:</strong> múltiples transacciones pequeñas levantan alertas de comportamiento anómalo.</li>
+                                <li><strong>Reversibilidad:</strong> transacciones de menor monto son más fáciles de disputar y recuperar.</li>
                             </ul>
                         </div>
 
@@ -1020,23 +910,23 @@
                             <h3>Activar notificaciones de transacciones</h3>
                             <p>Las notificaciones inmediatas son cruciales para detección temprana de fraude en medios de pago NFC.</p>
 
-                            <h4>Alertas inmediatas de pagos:</h4>
+                            <h4>Alertas inmediatas de pagos</h4>
                             <ul>
-                                <li><strong>Push notifications:</strong> Configurar en app bancaria notificaciones instantáneas para cada cargo</li>
-                                <li><strong>Información incluida:</strong> Monto, comercio, ubicación, fecha/hora, últimos 4 dígitos de tarjeta</li>
-                                <li><strong>Diferenciación de canales:</strong> Identificar si transacción fue NFC, chip, banda magnética, online</li>
-                                <li><strong>Respuesta rápida:</strong> Opción de reportar fraude directamente desde notificación</li>
+                                <li><strong>Push notifications:</strong> configurar en app bancaria notificaciones instantáneas para cada cargo.</li>
+                                <li><strong>Información incluida:</strong> monto, comercio, ubicación, fecha/hora, últimos 4 dígitos de tarjeta.</li>
+                                <li><strong>Diferenciación de canales:</strong> identificar si transacción fue NFC, chip, banda magnética, online.</li>
+                                <li><strong>Respuesta rápida:</strong> opción de reportar fraude directamente desde notificación.</li>
                             </ul>
 
-                            <h4>Detección temprana de fraude:</h4>
+                            <h4>Detección temprana de fraude</h4>
                             <ul>
-                                <li><strong>Ventana de detección:</strong> Identificar transacciones no autorizadas en segundos/minutos</li>
-                                <li><strong>Prevención de daño adicional:</strong> Bloquear tarjeta antes de que atacante realice más cargos</li>
-                                <li><strong>Geolocalización:</strong> Detectar transacciones en ubicaciones improbables (ej: dos ciudades simultáneamente)</li>
-                                <li><strong>Patrón de gasto:</strong> Alertas por desviaciones de comportamiento habitual de compra</li>
+                                <li><strong>Ventana de detección:</strong> identificar transacciones no autorizadas en segundos/minutos.</li>
+                                <li><strong>Prevención de daño adicional:</strong> bloquear tarjeta antes de que atacante realice más cargos.</li>
+                                <li><strong>Geolocalización:</strong> detectar transacciones en ubicaciones improbables (ej: dos ciudades simultáneamente).</li>
+                                <li><strong>Patrón de gasto:</strong> alertas por desviaciones de comportamiento habitual de compra.</li>
                             </ul>
 
-                            <h4>Configuración en apps bancarias:</h4>
+                            <h4>Configuración en apps bancarias</h4>
                             <ul>
                                 <li><strong>BBVA:</strong> App → Configuración → Notificaciones → Activar "Movimientos de tarjeta"</li>
                                 <li><strong>Santander:</strong> App → Ajustes → Notificaciones → "Alertas de uso de tarjetas"</li>
@@ -1045,13 +935,13 @@
                                 <li><strong>Apple Pay:</strong> Wallet → Tarjeta → Configuración → "Notificaciones de transacciones"</li>
                             </ul>
 
-                            <h4>Tipos de alertas recomendadas:</h4>
+                            <h4>Tipos de alertas recomendadas</h4>
                             <ul>
-                                <li><strong>Todas las transacciones:</strong> Sin mínimo de monto, notificar cada cargo</li>
-                                <li><strong>Transacciones internacionales:</strong> Alerta especial para uso fuera del país</li>
-                                <li><strong>Compras online:</strong> Notificación diferenciada para e-commerce</li>
-                                <li><strong>Intentos fallidos:</strong> Alertar sobre intentos de transacción rechazados (posible ataque en progreso)</li>
-                                <li><strong>Cambios de configuración:</strong> Notificar modificaciones de límites, PINs, o adición de tarjetas</li>
+                                <li><strong>Todas las transacciones:</strong> sin mínimo de monto, notificar cada cargo.</li>
+                                <li><strong>Transacciones internacionales:</strong> alerta especial para uso fuera del país.</li>
+                                <li><strong>Compras online:</strong> notificación diferenciada para e-commerce.</li>
+                                <li><strong>Intentos fallidos:</strong> alertar sobre intentos de transacción rechazados (posible ataque en progreso).</li>
+                                <li><strong>Cambios de configuración:</strong> notificar modificaciones de límites, PINs, o adición de tarjetas.</li>
                             </ul>
                         </div>
 
@@ -1059,50 +949,49 @@
                             <h3>Autenticación biométrica adicional</h3>
                             <p>Requerir autenticación biométrica añade una capa de protección significativa contra uso no autorizado de medios de pago.</p>
 
-                            <h4>Requerimiento de huella/Face ID para pagos:</h4>
+                            <h4>Requerimiento de huella/Face ID para pagos</h4>
                             <ul>
-                                <li><strong>Apple Pay:</strong> Requiere Face ID, Touch ID o código de dispositivo para cada transacción</li>
-                                <li><strong>Google Pay:</strong> Configurar "Bloqueo de pantalla" obligatorio para pagos</li>
-                                <li><strong>Samsung Pay:</strong> Autenticación mediante huella, iris o código antes de emitir pago</li>
-                                <li><strong>Ventaja contra relay attacks:</strong> Dificulta que SuperCard X capture transacción sin presencia física</li>
+                                <li><strong>Apple Pay:</strong> requiere Face ID, Touch ID o código de dispositivo para cada transacción.</li>
+                                <li><strong>Google Pay:</strong> configurar "Bloqueo de pantalla" obligatorio para pagos.</li>
+                                <li><strong>Samsung Pay:</strong> autenticación mediante huella, iris o código antes de emitir pago.</li>
+                                <li><strong>Ventaja contra relay attacks:</strong> dificulta que SuperCard X capture transacción sin presencia física.</li>
                             </ul>
 
-                            <h4>Protección ante acceso no autorizado:</h4>
+                            <h4>Protección ante acceso no autorizado</h4>
                             <ul>
-                                <li><strong>Dispositivo robado:</strong> Incluso con dispositivo en manos de atacante, no puede realizar pagos sin biometría</li>
-                                <li><strong>Malware en ejecución:</strong> Copybara no puede simular huella dactilar o Face ID legítimos</li>
-                                <li><strong>Timeout de sesión:</strong> Requiere nueva autenticación tras período de inactividad</li>
-                                <li><strong>Anti-spoofing:</strong> Sensores biométricos modernos detectan intentos de falsificación (fotos, máscaras)</li>
+                                <li><strong>Dispositivo robado:</strong> incluso con dispositivo en manos de atacante, no puede realizar pagos sin biometría.</li>
+                                <li><strong>Malware en ejecución:</strong> Copybara no puede simular huella dactilar o Face ID legítimos.</li>
+                                <li><strong>Timeout de sesión:</strong> requiere nueva autenticación tras período de inactividad.</li>
+                                <li><strong>Anti-spoofing:</strong> sensores biométricos modernos detectan intentos de falsificación (fotos, máscaras).</li>
                             </ul>
 
-                            <h4>Configuración en apps de pago:</h4>
+                            <h4>Configuración en apps de pago</h4>
                             <ul>
                                 <li><strong>Google Pay:</strong>
                                     <ul>
-                                        <li>Configuración → Seguridad → "Requerir desbloqueo de dispositivo"</li>
-                                        <li>Opciones: Huella, patrón, PIN, reconocimiento facial</li>
+                                        <li>Configuración → Seguridad → "Requerir desbloqueo de dispositivo".</li>
+                                        <li>Opciones: Huella, patrón, PIN, reconocimiento facial.</li>
                                     </ul>
                                 </li>
                                 <li><strong>Apple Pay:</strong>
                                     <ul>
-                                        <li>Face ID/Touch ID obligatorio por defecto</li>
-                                        <li>No permite desactivación de autenticación</li>
+                                        <li>Face ID/Touch ID obligatorio por defecto.</li>
+                                        <li>No permite desactivación de autenticación.</li>
                                     </ul>
                                 </li>
                                 <li><strong>Apps bancarias:</strong>
                                     <ul>
-                                        <li>Activar autenticación biométrica para acceso a app</li>
-                                        <li>Configurar biometría adicional para transferencias y pagos</li>
+                                        <li>Activar autenticación biométrica para acceso a app.</li>
+                                        <li>Configurar biometría adicional para transferencias y pagos.</li>
                                     </ul>
                                 </li>
                             </ul>
 
-                            <h4>Mejores prácticas biométricas:</h4>
+                            <h4>Mejores prácticas biométricas</h4>
                             <ul>
-                                <li><strong>Registrar múltiples huellas:</strong> Evitar bloqueo si un dedo está lastimado</li>
-                                <li><strong>PIN de respaldo robusto:</strong> Usar código seguro como alternativa biométrica</li>
-                                <li><strong>No compartir biometría:</strong> No registrar huellas de terceros en dispositivo personal</li>
-                                <li><strong>Actualización de biometría:</strong> Reregistrar huellas periódicamente para mayor precisión</li>
+                                <li><strong>Registrar múltiples huellas:</strong> evitar bloqueo si un dedo está lastimado.</li>
+                                <li><strong>PIN de respaldo robusto:</strong> usar código seguro como alternativa biométrica.</li>
+                                <li><strong>No compartir biometría:</strong> no registrar huellas de terceros en dispositivo personal.</li>
                             </ul>
                         </div>
 
@@ -1110,98 +999,89 @@
                             <h3>Soluciones de seguridad móvil</h3>
                             <p>Antimalware especializado para Android puede detectar y bloquear amenazas como SuperCard X y Copybara.</p>
 
-                            <h4>Antimalware para Android:</h4>
+                            <h4>Antimalware para Android</h4>
                             <ul>
-                                <li><strong>Google Play Protect:</strong> Integrado en Android, escaneo automático de apps instaladas</li>
-                                <li><strong>ESET Mobile Security:</strong> Detección proactiva de malware bancario, anti-phishing, anti-theft</li>
-                                <li><strong>Bitdefender Mobile Security:</strong> Motor de detección en la nube, protección web, VPN incluida</li>
-                                <li><strong>Kaspersky Mobile Antivirus:</strong> Análisis de apps, detección comportamental, anti-ransomware</li>
-                                <li><strong>Norton Mobile Security:</strong> Escáner de vulnerabilidades, asesor de apps, protección WiFi</li>
+                                <li><strong>Google Play Protect:</strong> integrado en Android, escaneo automático de apps instaladas.</li>
+                                <li><strong>ESET Mobile Security:</strong> detección proactiva de malware bancario, anti-phishing, anti-theft.</li>
+                                <li><strong>Bitdefender Mobile Security:</strong> motor de detección en la nube, protección web, VPN incluida.</li>
+                                <li><strong>Kaspersky Mobile Antivirus:</strong> análisis de apps, detección comportamental, anti-ransomware.</li>
+                                <li><strong>Norton Mobile Security:</strong> escáner de vulnerabilidades, asesor de apps, protección WiFi.</li>
                             </ul>
 
-                            <h4>Detección de comportamientos anómalos:</h4>
+                            <h4>Detección de comportamientos anómalos</h4>
                             <ul>
-                                <li><strong>Análisis heurístico:</strong> Detección de comportamientos sospechosos sin firmas conocidas</li>
-                                <li><strong>Monitorización de permisos:</strong> Alertas cuando app solicita permisos peligrosos</li>
-                                <li><strong>Detección de overlays:</strong> Identificación de ventanas superpuestas maliciosas (anti-Copybara)</li>
-                                <li><strong>Análisis de tráfico de red:</strong> Detección de comunicaciones C&amp;C sospechosas</li>
-                                <li><strong>Protección en tiempo real:</strong> Bloqueo de acciones maliciosas antes de ejecución</li>
+                                <li><strong>Análisis heurístico:</strong> detección de comportamientos sospechosos sin firmas conocidas.</li>
+                                <li><strong>Monitorización de permisos:</strong> alertas cuando app solicita permisos peligrosos.</li>
+                                <li><strong>Detección de overlays:</strong> identificación de ventanas superpuestas maliciosas (anti-Copybara).</li>
+                                <li><strong>Análisis de tráfico de red:</strong> detección de comunicaciones C&amp;C sospechosas.</li>
+                                <li><strong>Protección en tiempo real:</strong> bloqueo de acciones maliciosas antes de ejecución.</li>
                             </ul>
 
-                            <h4>Características clave a buscar:</h4>
+                            <h4>Características clave a buscar</h4>
                             <ul>
-                                <li><strong>Anti-phishing:</strong> Bloqueo de sitios web maliciosos y correos de phishing</li>
-                                <li><strong>Protección de llamadas:</strong> Filtrado de llamadas sospechosas (vishing)</li>
-                                <li><strong>App Lock:</strong> Protección con PIN/huella para apps sensibles</li>
-                                <li><strong>Auditoría de privacidad:</strong> Informes sobre permisos y acceso a datos de apps</li>
-                                <li><strong>VPN integrada:</strong> Cifrado de conexión en redes WiFi públicas</li>
-                                <li><strong>Anti-theft:</strong> Localización, borrado remoto, bloqueo de dispositivo</li>
+                                <li><strong>Anti-phishing:</strong> bloqueo de sitios web maliciosos y correos de phishing.</li>
+                                <li><strong>Protección de llamadas:</strong> filtrado de llamadas sospechosas (vishing).</li>
+                                <li><strong>App Lock:</strong> protección con PIN/huella para apps sensibles.</li>
+                                <li><strong>Auditoría de privacidad:</strong> informes sobre permisos y acceso a datos de apps.</li>
+                                <li><strong>VPN integrada:</strong> cifrado de conexión en redes WiFi públicas.</li>
+                                <li><strong>Anti-theft:</strong> localización, borrado remoto, bloqueo de dispositivo.</li>
                             </ul>
 
-                            <h4>Consideraciones de rendimiento:</h4>
+                            <h4>Consideraciones de rendimiento</h4>
                             <ul>
-                                <li><strong>Impacto en batería:</strong> Escaneos constantes pueden reducir autonomía</li>
-                                <li><strong>Consumo de recursos:</strong> Antivirus en ejecución consume RAM y CPU</li>
-                                <li><strong>Balance necesario:</strong> Seguridad adicional justifica impacto moderado en rendimiento</li>
-                                <li><strong>Soluciones ligeras:</strong> ESET y Bitdefender optimizados para bajo consumo</li>
+                                <li><strong>Impacto en batería:</strong> escaneos constantes pueden reducir autonomía.</li>
+                                <li><strong>Consumo de recursos:</strong> antivirus en ejecución consume RAM y CPU.</li>
+                                <li><strong>Balance necesario:</strong> seguridad adicional justifica impacto moderado en rendimiento.</li>
                             </ul>
 
-                            <h4>Configuración recomendada:</h4>
+                            <h4>Configuración recomendada</h4>
                             <ul>
-                                <li><strong>Escaneo programado:</strong> Análisis completo semanal durante la noche</li>
-                                <li><strong>Protección en tiempo real activada:</strong> Esencial para detección proactiva</li>
-                                <li><strong>Actualizaciones automáticas:</strong> Base de datos de malware siempre actualizada</li>
-                                <li><strong>Modo de alto rendimiento:</strong> En dispositivos potentes, activar protecciones máximas</li>
+                                <li><strong>Escaneo programado:</strong> análisis completo semanal durante la noche.</li>
+                                <li><strong>Protección en tiempo real activada:</strong> esencial para detección proactiva.</li>
+                                <li><strong>Actualizaciones automáticas:</strong> base de datos de malware siempre actualizada.</li>
+                                <li><strong>Modo de alto rendimiento:</strong> en dispositivos potentes, activar protecciones máximas.</li>
                             </ul>
                         </div>
 
                         <div id="tab-monitoring" class="tab-panel" role="tabpanel" aria-labelledby="tab-monitoring-btn">
-                            <h3>Monitoreo de actividad de cuenta</h3>
+                            <h3>Monitorización de actividad de cuenta</h3>
                             <p>La revisión periódica y sistemática de movimientos bancarios permite identificar fraudes que hayan eludido otras defensas.</p>
 
-                            <h4>Revisión periódica de transacciones:</h4>
+                            <h4>Revisión periódica de transacciones</h4>
                             <ul>
-                                <li><strong>Frecuencia diaria:</strong> Revisar movimientos al menos una vez al día</li>
-                                <li><strong>Uso de apps bancarias:</strong> Acceso inmediato al historial de transacciones</li>
-                                <li><strong>Alertas configuradas:</strong> Complementar con notificaciones push activas</li>
-                                <li><strong>Revisión de extractos:</strong> Análisis mensual detallado de estado de cuenta</li>
+                                <li><strong>Frecuencia diaria:</strong> revisar movimientos al menos una vez al día.</li>
+                                <li><strong>Uso de apps bancarias:</strong> acceso inmediato al historial de transacciones.</li>
+                                <li><strong>Alertas configuradas:</strong> complementar con notificaciones push activas.</li>
+                                <li><strong>Revisión de extractos:</strong> análisis mensual detallado de estado de cuenta.</li>
                             </ul>
 
                             <h4>Detección de cargos no reconocidos:</h4>
                             <ul>
-                                <li><strong>Transacciones pequeñas:</strong> Atacantes suelen hacer cargos mínimos para probar tarjeta</li>
-                                <li><strong>Comercios desconocidos:</strong> Verificar cualquier transacción en establecimiento no familiar</li>
-                                <li><strong>Ubicaciones sospechosas:</strong> Cargos en ciudades/países donde no has estado</li>
-                                <li><strong>Duplicación de cargos:</strong> Múltiples transacciones idénticas en corto período</li>
-                                <li><strong>Horarios inusuales:</strong> Transacciones a horas en que normalmente no compras</li>
+                                <li><strong>Transacciones pequeñas:</strong> atacantes suelen hacer cargos mínimos para probar tarjeta.</li>
+                                <li><strong>Comercios desconocidos:</strong> verificar cualquier transacción en establecimiento no familiar.</li>
+                                <li><strong>Ubicaciones sospechosas:</strong> cargos en ciudades/países donde no has estado.</li>
+                                <li><strong>Duplicación de cargos:</strong> múltiples transacciones idénticas en corto período.</li>
+                                <li><strong>Horarios inusuales:</strong> transacciones a horas en que normalmente no compras.</li>
                             </ul>
 
-                            <h4>Procedimientos de reporte de fraude:</h4>
+                            <h4>Procedimientos de reporte de fraude</h4>
                             <ol>
-                                <li><strong>Contacto inmediato con banco:</strong> Líneas de atención 24/7 para emergencias de fraude</li>
-                                <li><strong>Bloqueo de tarjeta:</strong> Solicitar bloqueo inmediato para prevenir más cargos</li>
-                                <li><strong>Disputa de transacciones:</strong> Presentar reclamación formal de cargos no autorizados</li>
-                                <li><strong>Emisión de nueva tarjeta:</strong> Solicitar reemplazo con nuevos números</li>
-                                <li><strong>Cambio de credenciales:</strong> Actualizar contraseñas de banca online y apps</li>
-                                <li><strong>Revisión de seguridad:</strong> Escanear dispositivo con antimalware</li>
-                                <li><strong>Denuncia policial:</strong> En casos graves, presentar denuncia formal</li>
-                                <li><strong>Monitoreo de crédito:</strong> Vigilar reportes de crédito por actividad fraudulenta adicional</li>
+                                <li><strong>Contacto inmediato con banco:</strong> líneas de atención 24/7 para emergencias de fraude.</li>
+                                <li><strong>Bloqueo de tarjeta:</strong> solicitar bloqueo inmediato para prevenir más cargos.</li>
+                                <li><strong>Disputa de transacciones:</strong> presentar reclamación formal de cargos no autorizados.</li>
+                                <li><strong>Emisión de nueva tarjeta:</strong> solicitar reemplazo con nuevos números.</li>
+                                <li><strong>Cambio de credenciales:</strong> actualizar contraseñas de banca online y apps.</li>
+                                <li><strong>Revisión de seguridad:</strong> escanear dispositivo con antimalware.</li>
+                                <li><strong>Denuncia policial:</strong> en casos graves, presentar denuncia formal.</li>
+                                <li><strong>Monitoreo de crédito:</strong> vigilar reportes de crédito por actividad fraudulenta adicional.</li>
                             </ol>
 
-                            <h4>Herramientas de análisis de gastos:</h4>
+                            <h4>Buenas prácticas de monitorización</h4>
                             <ul>
-                                <li><strong>Apps financieras:</strong> Fintonic, Mint, YNAB para categorización automática</li>
-                                <li><strong>Detección de anomalías:</strong> Algoritmos que identifican patrones de gasto inusuales</li>
-                                <li><strong>Alertas de presupuesto:</strong> Notificaciones al exceder umbrales configurados</li>
-                                <li><strong>Consolidación de cuentas:</strong> Vista unificada de todas las tarjetas y cuentas</li>
-                            </ul>
-
-                            <h4>Buenas prácticas de monitoreo:</h4>
-                            <ul>
-                                <li><strong>Guardar comprobantes:</strong> Conservar recibos para comparar con cargos</li>
-                                <li><strong>Verificar montos exactos:</strong> Confirmar que cargo corresponde exactamente al monto pagado</li>
-                                <li><strong>Revisar categorías:</strong> Asegurar que tipo de comercio (MCC code) sea correcto</li>
-                                <li><strong>Atención a "preautorizaciones":</strong> Cargos pendientes que pueden indicar pruebas de tarjeta</li>
+                                <li><strong>Guardar comprobantes:</strong> conservar recibos para comparar con cargos.</li>
+                                <li><strong>Verificar montos exactos:</strong> confirmar que cargo corresponde exactamente al monto pagado.</li>
+                                <li><strong>Revisar categorías:</strong> asegurar que tipo de comercio (MCC code) sea correcto.</li>
+                                <li><strong>Atención a "preautorizaciones":</strong> cargos pendientes que pueden indicar pruebas de tarjeta.</li>
                             </ul>
                         </div>
 
@@ -1209,57 +1089,56 @@
                             <h3>Evitar redes WiFi públicas para operaciones bancarias</h3>
                             <p>Las redes WiFi abiertas representan un vector de ataque significativo para interceptación de credenciales y ataques MITM.</p>
 
-                            <h4>Riesgos de MITM en redes abiertas:</h4>
+                            <h4>Riesgos de MITM en redes abiertas</h4>
                             <ul>
-                                <li><strong>Interceptación de tráfico:</strong> Atacantes en la misma red pueden capturar paquetes no cifrados</li>
-                                <li><strong>ARP spoofing:</strong> Redirección de tráfico a través de dispositivo del atacante</li>
-                                <li><strong>DNS hijacking:</strong> Manipulación de respuestas DNS para redirigir a sitios falsos</li>
-                                <li><strong>SSL stripping:</strong> Degradación de conexiones HTTPS a HTTP vulnerable</li>
-                                <li><strong>Evil Twin attacks:</strong> Puntos de acceso falsos que imitan redes legítimas (similar a WiFi Pineapple)</li>
+                                <li><strong>Interceptación de tráfico:</strong> atacantes en la misma red pueden capturar paquetes no cifrados.</li>
+                                <li><strong>ARP spoofing:</strong> redirección de tráfico a través de dispositivo del atacante.</li>
+                                <li><strong>DNS hijacking:</strong> manipulación de respuestas DNS para redirigir a sitios falsos.</li>
+                                <li><strong>SSL stripping:</strong> degradación de conexiones HTTPS a HTTP vulnerable.</li>
+                                <li><strong>Evil Twin attacks:</strong> puntos de acceso falsos que imitan redes legítimas (ver <a href="https://ciberunir.github.io/practica-grupal/" target="_blank">práctica sobre ataques de phishing en redes inalábricas</a>).</li>
                             </ul>
 
-                            <h4>Uso de VPN cuando sea necesario:</h4>
+                            <h4>Uso de VPN cuando sea necesario</h4>
                             <ul>
-                                <li><strong>Cifrado extremo a extremo:</strong> VPN cifra todo el tráfico antes de salir del dispositivo</li>
-                                <li><strong>Túnel seguro:</strong> Comunicación directa con servidor VPN, invisible para atacantes locales</li>
-                                <li><strong>VPNs recomendadas:</strong> NordVPN, ExpressVPN, ProtonVPN, Mullvad</li>
-                                <li><strong>Protocolo seguro:</strong> Preferir WireGuard, OpenVPN o IKEv2</li>
-                                <li><strong>Kill switch:</strong> Bloquear tráfico si VPN se desconecta accidentalmente</li>
-                                <li><strong>No-logs policy:</strong> Elegir proveedores que no almacenan registros de actividad</li>
+                                <li><strong>Cifrado extremo a extremo:</strong> VPN cifra todo el tráfico antes de salir del dispositivo.</li>
+                                <li><strong>Túnel seguro:</strong> comunicación directa con servidor VPN, invisible para atacantes locales.</li>
+                                <li><strong>VPNs recomendadas:</strong> NordVPN, ExpressVPN, ProtonVPN, Mullvad.</li>
+                                <li><strong>Protocolo seguro:</strong> preferir WireGuard, OpenVPN o IKEv2.</li>
+                                <li><strong>Kill switch:</strong> bloquear tráfico si VPN se desconecta accidentalmente.</li>
+                                <li><strong>No-logs policy:</strong> elegir proveedores que no almacenan registros de actividad.</li>
                             </ul>
 
-                            <h4>Preferir datos móviles:</h4>
+                            <h4>Preferir datos móviles</h4>
                             <ul>
-                                <li><strong>Conexión directa:</strong> 4G/5G es inherentemente más seguro que WiFi pública</li>
-                                <li><strong>Cifrado de operador:</strong> Comunicaciones móviles cifradas por defecto</li>
-                                <li><strong>Autenticación SIM:</strong> Autenticación mutua entre dispositivo y red móvil</li>
-                                <li><strong>Tethering seguro:</strong> Compartir conexión móvil es más seguro que WiFi pública</li>
-                                <li><strong>Desventaja:</strong> Consumo de datos, posible costo adicional</li>
+                                <li><strong>Conexión directa:</strong> 4G/5G es inherentemente más seguro que WiFi pública.</li>
+                                <li><strong>Cifrado de operador:</strong> comunicaciones móviles cifradas por defecto.</li>
+                                <li><strong>Autenticación SIM:</strong> autenticación mutua entre dispositivo y red móvil.</li>
+                                <li><strong>Tethering seguro:</strong> compartir conexión móvil es más seguro que WiFi pública.</li>
+                                <li><strong>Desventaja:</strong> consumo de datos, posible costo adicional.</li>
                             </ul>
 
-                            <h4>Identificación de redes WiFi sospechosas:</h4>
+                            <h4>Identificación de redes WiFi sospechosas</h4>
                             <ul>
-                                <li><strong>Nombres genéricos:</strong> "Free WiFi", "Public WiFi", "Airport WiFi" sin detalles específicos</li>
-                                <li><strong>Sin contraseña:</strong> Redes completamente abiertas sin autenticación</li>
-                                <li><strong>Duplicación de SSID:</strong> Múltiples redes con nombres idénticos (posible Evil Twin)</li>
-                                <li><strong>Portales cautivos sospechosos:</strong> Solicitud de datos personales excesivos</li>
-                                <li><strong>Certificados inválidos:</strong> Advertencias de certificado SSL en conexión inicial</li>
+                                <li><strong>Nombres genéricos:</strong> "Free WiFi", "Public WiFi", "Airport WiFi" sin detalles específicos.</li>
+                                <li><strong>Sin contraseña:</strong> redes completamente abiertas sin autenticación.</li>
+                                <li><strong>Duplicación de SSID:</strong> múltiples redes con nombres idénticos (posible Evil Twin).</li>
+                                <li><strong>Portales cautivos sospechosos:</strong> solicitud de datos personales excesivos.</li>
+                                <li><strong>Certificados inválidos:</strong> advertencias de certificado SSL en conexión inicial.</li>
                             </ul>
 
-                            <h4>Configuración de seguridad WiFi:</h4>
+                            <h4>Configuración de seguridad WiFi</h4>
                             <ul>
-                                <li><strong>Olvidar redes automáticamente:</strong> No permitir reconexión automática a redes públicas</li>
-                                <li><strong>Deshabilitar "Conectar automáticamente":</strong> Requiere selección manual de red</li>
-                                <li><strong>Desactivar compartir archivos:</strong> Cerrar carpetas compartidas y AirDrop en redes públicas</li>
-                                <li><strong>Firewall activado:</strong> Bloquear conexiones entrantes no solicitadas</li>
+                                <li><strong>Olvidar redes automáticamente:</strong> no permitir reconexión automática a redes públicas.</li>
+                                <li><strong>Deshabilitar "Conectar automáticamente":</strong> requiere selección manual de red.</li>
+                                <li><strong>Desactivar compartir archivos:</strong> cerrar carpetas compartidas y AirDrop en redes públicas.</li>
+                                <li><strong>Firewall activado:</strong> bloquear conexiones entrantes no solicitadas.</li>
                             </ul>
 
-                            <h4>Alternativas seguras:</h4>
+                            <h4>Alternativas seguras</h4>
                             <ul>
-                                <li><strong>Hotspot personal:</strong> Usar tethering desde smartphone con datos móviles</li>
-                                <li><strong>Esperar a WiFi confiable:</strong> Posponer operaciones bancarias hasta red segura</li>
-                                <li><strong>App móvil en 4G/5G:</strong> Usar app bancaria nativa con datos móviles en lugar de web en WiFi</li>
-                                <li><strong>Puntos de acceso corporativos:</strong> WiFi de empresas confiables (hoteles de cadena, aerolíneas)</li>
+                                <li><strong>Hotspot personal:</strong> usar tethering desde smartphone con datos móviles.</li>
+                                <li><strong>Esperar a WiFi confiable:</strong> posponer operaciones bancarias hasta red segura.</li>
+                                <li><strong>App móvil en 4G/5G:</strong> usar app bancaria nativa con datos móviles en lugar de web en WiFi.</li>
                             </ul>
                         </div>
                     </div>
@@ -1425,7 +1304,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 - Laboratorio de fraudes en medios de pago NFC</p>
+            <p>© 2026 - Laboratorio de fraudes en medios de pago NFC</p>
             <p>Este contenido es exclusivamente educativo y no debe utilizarse con fines maliciosos.</p>
         </div>
     </footer>
